@@ -1,0 +1,48 @@
+/*
+  _     _ _                           
+ | |   (_) |__  _ __ __ _ _ __ _   _  
+ | |   | | '_ \| '__/ _` | '__| | | | 
+ | |___| | |_) | | | (_| | |  | |_| | 
+ |_____|_|_.__/|_|  \__,_|_|   \__, | 
+                               |___/  
+      Import Library - Variables                 
+  ____ _____ _____ _____ _____ _____ 
+ |_____|_____|_____|_____|_____|_____|
+*/
+@import './utilities/_library.scss';
+
+
+/* 
+     __  __       _          _   _ ___               
+    |  \/  | __ _(_)_ __    | | | |_ _|              
+    | |\/| |/ _` | | '_ \   | | | || |               
+    | |  | | (_| | | | | |  | |_| || |               
+    |_|  |_|\__,_|_|_| |_|   \___/|___|       
+    Main UI - SCSS /w imported Library       
+  _____ _____ _____ _____ _____ _____ _____ _____ 
+ |_____|_____|_____|_____|_____|_____|_____|_____|
+  
+ This the the main document for the styling for the App.js component, here the main theme off
+ the app is chosen from the variables listed above, be careful with how you change CSS here. 
+
+ Todo:
+  - Set Variables for different themes
+  - Try out different types of UI
+*/
+
+$selected-UI: $light-ui;
+
+.main { 
+  background: map-get($map: $selected-UI, $key: "background");
+  font-family: map-get($map: $selected-UI, $key: "font-family");
+  margin: 0 auto;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.primary {
+  height: 80vh;
+  width: 100vw;
+
+}

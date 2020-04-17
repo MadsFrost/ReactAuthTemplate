@@ -1,0 +1,131 @@
+/*
+ __   __        _      _    _         
+ \ \ / /_ _ _ _(_)__ _| |__| |___ ___ 
+  \ V / _` | '_| / _` | '_ \ / -_|_-< 
+   \_/\__,_|_| |_\__,_|_.__/_\___/__/ 
+  ___ ___ ___ ___ ___ ___ ___ ___ ___ 
+ |___|___|___|___|___|___|___|___|___|
+
+ Here we are presented the different variables which can be changed to suit different styles in
+ this document "menu.scss"
+
+ */
+
+ // Importing Variables from foundation scss
+ @import "../../utilities/_library.scss";
+ @use "sass:map";
+
+
+/*
+
+
+  __  __                      _   _ ___           
+ |  \/  | ___ _ __  _   _    | | | |_ _|          
+ | |\/| |/ _ \ '_ \| | | |   | | | || |           
+ | |  | |  __/ | | | |_| |   | |_| || |           
+ |_|  |_|\___|_| |_|\__,_|    \___/|___|          
+  _____ _____ _____ _____ _____ _____ _____ _____ 
+ |_____|_____|_____|_____|_____|_____|_____|_____|
+  
+ This the the scss document for the styling for the GridMenu.js component, here the main theme off
+ the app is chosen from the variables listed above, be careful with how you change CSS here. 
+
+ Todo:
+  - Create a Mobile/Desktop friendly MENU UI
+
+ 
+ */
+
+ $selected-UI: $light-ui;
+
+.topnav {
+  overflow: hidden;
+  background: map-get($map: $selected-UI, $key: "nav");
+
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.topnav a:nth-child(6), a:nth-child(7){
+  float: right;
+  margin-right: 15px;
+}
+
+
+.topnav a:hover {
+  color: rgb(134, 134, 134);
+}
+
+.topnav .active {
+  color: green;
+}
+
+.topnav .icon {
+  display: none;
+  transition-property: width;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+  transition-delay: 1s;
+}
+
+@media screen and (max-width: 800px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+  }
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav.responsive .icon svg {
+   
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 15px;
+  }
+
+}
+
+ /*
+
+ __  __                    ___                         
+ |  \/  | ___ _ __  _   _  |_ _|_ __  _ __   ___ _ __   
+ | |\/| |/ _ \ '_ \| | | |  | || '_ \| '_ \ / _ \ '__|  
+ | |  | |  __/ | | | |_| |  | || | | | | | |  __/ |     
+ |_|  |_|\___|_| |_|\__,_| |___|_| |_|_| |_|\___|_|     
+  Second DIV box with-in the DynamicMenu DIV called
+              "DynamicMenuInner"
+  _____ _____ _____ _____ _____ _____ _____ _____ _____ 
+ |_____|_____|_____|_____|_____|_____|_____|_____|_____|
+ */
+ 
+ div.DynamicMenuInner {
+   display: flex;
+ }
+
+ div.DynamicMenuInner.DynamicMenuItem {
+   flex: 1;
+ }

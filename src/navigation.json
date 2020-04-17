@@ -1,0 +1,9 @@
+[
+    ["Explore", "/", "<TestSection/>", false], 
+    ["Profile", "/profile/", "<TestSection/>", false], 
+    ["Messages", "/messages/", "<TestSection/>", false], 
+    ["Listings", "/listings/", "<TestSection/>",false], 
+    ["Settings", "/settings/","<TestSection/>", false],
+    ["Login", "/login/","<TestSection/>",false],
+    ["Sign-up", "/signup/", "<TestSection/>", false]
+] 

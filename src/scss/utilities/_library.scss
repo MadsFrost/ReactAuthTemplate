@@ -1,0 +1,28 @@
+/*
+
+   ____      _              ____       _                            
+  / ___|___ | | ___  _ __  / ___|  ___| |__   ___ _ __ ___   ___    
+ | |   / _ \| |/ _ \| '__| \___ \ / __| '_ \ / _ \ '_ ` _ \ / _ \   
+ | |__| (_) | | (_) | |     ___) | (__| | | |  __/ | | | | |  __/   
+  \____\___/|_|\___/|_|    |____/ \___|_| |_|\___|_| |_| |_|\___|   
+  _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ 
+ |_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|
+
+*/
+
+// Variations of UI-sets of gradients with color accents
+$dark-ui: (
+  background: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%),
+  nav: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%),
+  font-family: 'Roboto',
+);
+
+$light-ui: (
+  background: linear-gradient(to bottom, #dfe9f3 0%, white 100%),
+  nav: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%),
+  font-family: 'Roboto',
+);
+
+
+
+
