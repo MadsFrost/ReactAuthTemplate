@@ -1,15 +1,60 @@
 import React from 'react';
-import DynamicNavItems from './DynamicNavItems';
 import '../../scss/modules/menu/_menu.scss';
+import DynamicNavItem from './DynamicNavItem';
+import '../../scss/modules/menu/_menu.scss';
+
+
+import navigationLogged from '../../navigationLogged.json' 
+import navigationNotLogged from '../../navigationNotLogged.json';
 import { useSelector, useDispatch } from 'react-redux';
 import { onmobile } from '../../redux/actions';
+
+
 import MenuIcon from '@material-ui/icons/Menu';
 import MenuOpenIcon from '@material-ui/icons/MenuOpen';
 
-function DynamicNav() {
+const DynamicNavItemsLogged = navigationLogged.map((navItem) => {
+    return (
+            <DynamicNavItem key={navItem} name={navItem[0]} link={navItem[1]} icon={navItem[2]}/>
+        )
+}
+);
 
+const DynamicNavItemsNotLogged = navigationNotLogged.map((navItem) => {
+    return (
+            <DynamicNavItem key={navItem} name={navItem[0]} link={navItem[1]} icon={navItem[2]}/>
+        )
+}
+);
+
+function DynamicNav(props) {
+    
     const toggleMobile = useSelector(state => state.isMobile)
+    const toggleLogged = useSelector(state => state.isLogged)
     const dispatch = useDispatch();
+
+    const DynamicNavItems = () => {
+        if (toggleLogged === false ) {
+            const DynamicNavItems = navigationNotLogged.map((navItem) => {
+                return (
+                        <DynamicNavItem key={navItem} name={navItem[0]} link={navItem[1]} icon={navItem[2]}/>
+                    )
+            }
+            );
+            return DynamicNavItems
+        } else if (toggleLogged === true) {
+            const DynamicNavItems = navigationLogged.map((navItem) => {
+                return (
+                        <DynamicNavItem key={navItem} name={navItem[0]} link={navItem[1]} icon={navItem[2]}/>
+                    )
+            }
+            );
+            return DynamicNavItems
+     }
+    }
+
+
+
 
     const toggleMenu = () => {
         dispatch(onmobile())
@@ -22,19 +67,21 @@ function DynamicNav() {
             toggle.className = "topnav";
         }
     }
-
+    console.log(props.logged)
     return (
         <div className="topnav" id="myTopnav">
-            {DynamicNavItems}
-            <a className="icon" id="toggleMenu" onClick={toggleMenu}>
-            <i className="fa fa-bars">
-                {toggleMobile ? <MenuOpenIcon fontSize={"large"} /> : <MenuIcon fontSize={"large"} />}
-            </i>
+            <DynamicNavItems/>
+     
+            <a className="icon" id="toggleMenu" onClick={toggleMenu} href="#">
+                <i className="fa fa-bars">
+                    {toggleMobile ? <MenuOpenIcon fontSize={"large"} /> : <MenuIcon fontSize={"large"} />}
+                </i>
             </a>
             
         </div>
 
 )
 }
+
 
 export default DynamicNav;

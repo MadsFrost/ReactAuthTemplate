@@ -15,3 +15,9 @@ export const onmobile = () => {
         type: 'ON_MOBILE'
     }
 }
+
+export const loggedon = () => {
+    return {
+        type: 'LOGGED_ON'
+    }
+}

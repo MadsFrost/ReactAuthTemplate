@@ -1,36 +1,59 @@
-import React, {ComponentClass} from 'react';
+import React from 'react';
 import './scss/_app.scss';
 import DynamicNav from './components/menu/DynamicNav';
-import Explore from './components/section/Explore';
-import TestSection from './components/section/TestSection';
-import { BrowserRouter as Route, Switch } from "react-router-dom";
-import navigation from './navigation.json';
 
+// Sections for Routers 
+
+import Explore from './components/section/Explore/Explore';
+import TestSection from './components/section/TestSection/TestSection';
+import Signup from './components/section/Signup/Signup';
+import { Switch, Route, withRouter } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { loggedon } from './redux/actions/';
 
 function App() {
 
-  const DynamicRoutes = navigation.map((navItem) => {
+  const toggleLogged = useSelector(state => state.isLogged)
 
+  function Logout() {
+    useDispatch(loggedon())
+  }
+  const NotLogged = () => {
+    return (
+      <Switch>
+        <Route exact path={"/"} component={withRouter(Explore)}/>
+        <Route path={"/profile"}  component={withRouter(TestSection)}/>
+        <Route path={"/messages"} component={withRouter(TestSection)}/>
+        <Route path={"/listings"} component={withRouter(TestSection)}/>
+        <Route path={"/settings"}  component={withRouter(TestSection)}/>
+        <Route path={"/login"} component={withRouter(TestSection)}/>
+        <Route path={"/signup"} component={Signup}/>  
+      </Switch>
+    )
+  }
 
-      return (
-              <Route exact path={navItem[1]} key={navItem[0]} name={navItem[0]}>
-                
-              </Route>
-          )
-    }
-  );
-
-  console.log(DynamicRoutes)
-
+  const Logged = () => {
+    return (
+      <Switch>
+        <Route exact path={"/"} component={withRouter(Explore)}/>
+        <Route path={"/profile"}  component={withRouter(TestSection)}/>
+        <Route path={"/messages"} component={withRouter(TestSection)}/>
+        <Route path={"/listings"} component={withRouter(TestSection)}/>
+        <Route path={"/settings"}  component={withRouter(TestSection)}/>
+        <Route path={"/logout"} onClick={Logout()} component={() => {return <Redirect to="/"/>}}/>
+        <Route path={"/signup"} component={() => {return <Redirect to="/"/>}}/>  
+      </Switch>
+    )
+  }
   return (
-    <div className="main">
-      <DynamicNav />
-      <div className="primary">
-        <Switch>
-            {DynamicRoutes}
-        </Switch>
+
+      <div className="main">
+        <DynamicNav />
+        <div className="primary">
+          {toggleLogged ? <Logged /> : <NotLogged/>}
+        </div>
       </div>
-    </div>
 
   );
 }

@@ -1,0 +1,9 @@
+[
+    ["Explore", "/", "MenuIcon", false],
+    ["Profile", "/profile", "MenuOpenIcon", false], 
+    ["Messages", "/messages", "MenuIcon", false], 
+    ["Listings", "/listings", "MenuOpenIcon", false], 
+    ["Settings", "/settings","MenuOpenIcon", false],
+    ["Login", "/login","MenuOpenIcon", false],
+    ["Sign-up", "/signup", "MenuOpenIcon", false]
+] 
