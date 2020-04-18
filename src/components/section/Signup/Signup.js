@@ -5,7 +5,7 @@ const Signup = () => {
 
     return (
         <div>
-            <h1>You can sign up</h1>
+            <h1>You can sign up here!</h1>
         </div>
     )
 }

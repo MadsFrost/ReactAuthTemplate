@@ -4,5 +4,5 @@
     ["Messages", "/messages", "MenuIcon", false], 
     ["Listings", "/listings", "MenuOpenIcon", false], 
     ["Settings", "/settings","MenuOpenIcon", false],
-    ["Logout", "/logout","MenuOpenIcon", false]
+    ["Logout", "/authentication/logout","MenuOpenIcon", false]
 ] 

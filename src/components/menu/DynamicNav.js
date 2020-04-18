@@ -13,20 +13,6 @@ import { onmobile } from '../../redux/actions';
 import MenuIcon from '@material-ui/icons/Menu';
 import MenuOpenIcon from '@material-ui/icons/MenuOpen';
 
-const DynamicNavItemsLogged = navigationLogged.map((navItem) => {
-    return (
-            <DynamicNavItem key={navItem} name={navItem[0]} link={navItem[1]} icon={navItem[2]}/>
-        )
-}
-);
-
-const DynamicNavItemsNotLogged = navigationNotLogged.map((navItem) => {
-    return (
-            <DynamicNavItem key={navItem} name={navItem[0]} link={navItem[1]} icon={navItem[2]}/>
-        )
-}
-);
-
 function DynamicNav(props) {
     
     const toggleMobile = useSelector(state => state.isMobile)
@@ -34,6 +20,7 @@ function DynamicNav(props) {
     const dispatch = useDispatch();
 
     const DynamicNavItems = () => {
+
         if (toggleLogged === false ) {
             const DynamicNavItems = navigationNotLogged.map((navItem) => {
                 return (
@@ -42,6 +29,7 @@ function DynamicNav(props) {
             }
             );
             return DynamicNavItems
+            
         } else if (toggleLogged === true) {
             const DynamicNavItems = navigationLogged.map((navItem) => {
                 return (
@@ -52,9 +40,6 @@ function DynamicNav(props) {
             return DynamicNavItems
      }
     }
-
-
-
 
     const toggleMenu = () => {
         dispatch(onmobile())
@@ -67,16 +52,16 @@ function DynamicNav(props) {
             toggle.className = "topnav";
         }
     }
-    console.log(props.logged)
+    
     return (
         <div className="topnav" id="myTopnav">
             <DynamicNavItems/>
      
-            <a className="icon" id="toggleMenu" onClick={toggleMenu} href="#">
+            <button className="icon" id="toggleMenu" onClick={toggleMenu} href="#">
                 <i className="fa fa-bars">
                     {toggleMobile ? <MenuOpenIcon fontSize={"large"} /> : <MenuIcon fontSize={"large"} />}
                 </i>
-            </a>
+            </button>
             
         </div>
 

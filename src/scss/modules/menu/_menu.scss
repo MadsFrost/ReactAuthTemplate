@@ -78,9 +78,16 @@
 
 @media screen and (max-width: 800px) {
   .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
+  .topnav button.icon {
     float: right;
     display: block;
+    background: none;
+    border: none;
+    padding-top: 10px;
+    padding-right: 20px;
+  }
+  .topnav button.icon:focus {
+    outline: none;
   }
 }
 

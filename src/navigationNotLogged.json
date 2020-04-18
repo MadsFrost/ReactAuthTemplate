@@ -4,6 +4,6 @@
     ["Messages", "/messages", "MenuIcon", false], 
     ["Listings", "/listings", "MenuOpenIcon", false], 
     ["Settings", "/settings","MenuOpenIcon", false],
-    ["Login", "/login","MenuOpenIcon", false],
+    ["Login", "/authentication/login","MenuOpenIcon", false],
     ["Sign-up", "/signup", "MenuOpenIcon", false]
 ] 
