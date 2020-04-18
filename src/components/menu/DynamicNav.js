@@ -24,7 +24,7 @@ function DynamicNav(props) {
         if (toggleLogged === false ) {
             const DynamicNavItems = navigationNotLogged.map((navItem) => {
                 return (
-                        <DynamicNavItem key={navItem} name={navItem[0]} link={navItem[1]} icon={navItem[2]}/>
+                        <DynamicNavItem fncToggle={toggleMenu} key={navItem} name={navItem[0]} link={navItem[1]} icon={navItem[2]}/>
                     )
             }
             );
@@ -33,7 +33,7 @@ function DynamicNav(props) {
         } else if (toggleLogged === true) {
             const DynamicNavItems = navigationLogged.map((navItem) => {
                 return (
-                        <DynamicNavItem key={navItem} name={navItem[0]} link={navItem[1]} icon={navItem[2]}/>
+                        <DynamicNavItem fncToggle={toggleMenu} key={navItem} name={navItem[0]} link={navItem[1]} icon={navItem[2]}/>
                     )
             }
             );
@@ -54,8 +54,8 @@ function DynamicNav(props) {
     }
     
     return (
-        <div className="topnav" id="myTopnav">
-            <DynamicNavItems/>
+        <div className="topnav" id="myTopnav" >
+            <DynamicNavItems />
      
             <button className="icon" id="toggleMenu" onClick={toggleMenu} href="#">
                 <i className="fa fa-bars">
