@@ -9,18 +9,16 @@
  |_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|
 
 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 // Variations of UI-sets of gradients with color accents
-$dark-ui: (
-  background: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%),
-  nav: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%),
-  font-family: 'Roboto',
-);
 
 $light-ui: (
-  background: linear-gradient(to bottom, #dfe9f3 0%, white 100%),
-  nav: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%),
+  background: white,
+  main: #fdfbfb,
   font-family: 'Roboto',
+  primary-color: #0463f18f,
+  accent-color: darkgray,
 );
 
 

@@ -1,9 +1,10 @@
 import React from 'react'
+import '../../../scss/modules/section/_section-base.scss'
 
 const Explore = () => {
     return (
-        <div>
-            <h1>Explore !!</h1>
+        <div className="section">
+            <h1>Hej mooor du er på min nettside</h1>
         </div>
     )
 }

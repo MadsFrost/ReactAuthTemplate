@@ -55,6 +55,7 @@ function DynamicNav(props) {
     
     return (
         <div className="topnav" id="myTopnav" >
+           
             <DynamicNavItems />
      
             <button className="icon" id="toggleMenu" onClick={toggleMenu} href="#">
