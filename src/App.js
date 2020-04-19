@@ -12,8 +12,9 @@ import LogoutView from './components/section/Logout/LogoutView';
 import DynamicNav from './components/menu/DynamicNav';
 import Error404 from './components/section/Error404/Error404';
 // Components Import
-import Explore from './components/section/Explore/Explore';
+import ExploreList from './components/section/Explore/ExploreList';
 import TestSection from './components/section/TestSection/TestSection';
+import ExploreCopenhagen from './components/section/Explore/City/ExploreCopenhagen';
 
 
 
@@ -31,11 +32,9 @@ function App() {
   const NotLogged = () => {
     return (
       <Switch>
-        <Route exact path={"/"} component={withRouter(Explore)}/>
-        <Route path={"/profile"}  component={withRouter(TestSection)}/>
-        <Route path={"/messages"} component={withRouter(TestSection)}/>
-        <Route path={"/listings"} component={withRouter(TestSection)}/>
-        <Route path={"/settings"}  component={withRouter(TestSection)}/>
+        <Route exact path={"/"} component={withRouter(ExploreCopenhagen)}/>
+        <Route exact path={"/guide"} component={withRouter(TestSection)}/>
+        <Route path={"/copenhagen"} component={withRouter(ExploreCopenhagen)}/>
         <Route path={"/authentication/login"} component={withRouter(Login)}/>
         <Route path={"/signup"} component={Signup}/>  
         <Route component={Error404} />
@@ -47,7 +46,9 @@ function App() {
     
     return (
       <Switch>
-        <Route exact path={"/"} component={withRouter(Explore)}/>
+        <Route exact path={"/"} component={withRouter(ExploreCopenhagen)}/>
+        <Route exact path={"/guide"} component={withRouter(TestSection)}/>
+        <Route path={"/copenhagen"} component={withRouter(ExploreCopenhagen)}/>
         <Route path={"/profile"}  component={withRouter(TestSection)}/>
         <Route path={"/messages"} component={withRouter(TestSection)}/>
         <Route path={"/listings"} component={withRouter(TestSection)}/>
@@ -60,13 +61,25 @@ function App() {
     )
   }
   return (
-
+      
       <div className="main">
-        <DynamicNav />
-        <div className="primary">
+
+        <header className="navbar">
+          <DynamicNav />
+        </header>
+
+        <div className="content">
           {toggleLogged ? <Logged /> : <NotLogged/>}
         </div>
+
+        <footer>
+          <div className="content-footer">
+            <h1>Footer</h1>
+          </div>
+        </footer>
+
       </div>
+      
 
   );
 }

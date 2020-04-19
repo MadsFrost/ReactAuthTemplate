@@ -1,7 +1,6 @@
 import React from 'react';
 import '../../scss/modules/menu/_menu.scss';
 import DynamicNavItem from './DynamicNavItem';
-import '../../scss/modules/menu/_menu.scss';
 
 
 import navigationLogged from '../../navigationLogged.json' 
@@ -23,9 +22,15 @@ function DynamicNav(props) {
 
         if (toggleLogged === false ) {
             const DynamicNavItems = navigationNotLogged.map((navItem) => {
-                return (
-                        <DynamicNavItem fncToggle={toggleMenu} key={navItem} name={navItem[0]} link={navItem[1]} icon={navItem[2]}/>
+                if (navItem[3] === true) {
+                    return (
+                        <DynamicNavItem givenClass="goRight" fncToggle={toggleMenu} key={navItem} name={navItem[0]} link={navItem[1]} icon={navItem[2]}/>
                     )
+                } else {
+                return (
+                        <DynamicNavItem givenClass=""fncToggle={toggleMenu} key={navItem} name={navItem[0]} link={navItem[1]} icon={navItem[2]}/>
+                    )
+                }
             }
             );
             return DynamicNavItems

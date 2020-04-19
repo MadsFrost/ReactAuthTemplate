@@ -27,9 +27,34 @@
  $selected-UI: $light-ui;
 
  .section {
-     display: flexbox;
-     flex-basis: 100%;
-     background: rgba(128, 128, 128, 0.034);
-     border-radius: 4px;
-     border-top: 6px solid rgba(0, 0, 0, 0.034);
+    flex-basis: 100%;
+    height: 100%;
+    justify-content: center;
+    flex-direction: row;
  }
+
+ .sectionHeader {
+     display: flex;
+     justify-content: center;
+     font-size: 40px;
+     color: map-get($map: $selected-UI, $key: "primary-color");
+ }
+
+ .explore-section-list {
+    display: flexbox;
+    flex-basis: 100%;
+    height: 100%;
+    background: none;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+ }
+
+ div.Explore.Copenhagen {
+    display: flexbox;
+    height: 90%;
+ }
+
+ div.Explore.Oslo {
+   display: flexbox;
+   height: 40%;
+}

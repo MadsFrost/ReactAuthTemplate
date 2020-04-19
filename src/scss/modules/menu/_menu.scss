@@ -38,9 +38,6 @@
 
  $selected-UI: $light-ui;
 
-.topnav {
-border-bottom: 8px solid rgba(0, 0, 0, 0.034);
-}
 .topnav > a.active:not(:first-child) {
   background: rgba(12, 77, 255, 0.158);
 
@@ -62,6 +59,9 @@ border-bottom: 8px solid rgba(0, 0, 0, 0.034);
   margin-right: 15px;
 }
 
+a.goRight{
+  float: right;
+}
 
 .topnav a:hover {
   color: rgb(88, 88, 88);
@@ -105,6 +105,10 @@ border-bottom: 8px solid rgba(0, 0, 0, 0.034);
     padding-top: 12px;
     padding-right: 20px;
     transform: scale(1.25);
+  }
+
+  .topnav button.icon:hover {
+    cursor: pointer;
   }
   .topnav button.icon:focus {
     outline: none;

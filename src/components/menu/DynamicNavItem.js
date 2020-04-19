@@ -9,7 +9,7 @@ import {
 const DynamicNavItem = (props) => {
 
     return (
-            <NavLink activeclassname="active" to={props.link} onClick={props.fncToggle}>{props.name}</NavLink>
+            <NavLink activeclassname="active" className={props.givenClass} to={props.link} onClick={props.fncToggle}>{props.name}</NavLink>
     )
 }
 

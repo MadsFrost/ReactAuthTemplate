@@ -1,9 +1,10 @@
 import React from 'react'
 
+
 const Login = () => {
     return (
         <div>
-            <h1>Login here!</h1>
+            <h1>Login or signup to create advert!</h1>
         </div>
     )
 }
