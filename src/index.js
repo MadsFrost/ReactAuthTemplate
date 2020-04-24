@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { createStore } from 'redux';
-import allReducer from './redux/reducers/index'
+import allReducer from './store/reducers/index'
 import { Provider } from 'react-redux';
 import { BrowserRouter } from "react-router-dom";
 
@@ -15,13 +15,11 @@ const store = createStore(
   )
 
 ReactDOM.render(
-  <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
         <App/>
       </BrowserRouter>
-    </Provider>
-  </React.StrictMode>,
+    </Provider>,
   document.getElementById('root')
 );
 

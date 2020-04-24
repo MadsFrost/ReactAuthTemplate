@@ -1,6 +1,0 @@
-[
-    ["Explore", "/", "MenuIcon", false],
-    ["Guide", "/guide", "MenuIcon", false],
-    ["Login", "/authentication/login","MenuOpenIcon", true],
-    ["Sign-up", "/signup", "MenuOpenIcon", true]
-] 

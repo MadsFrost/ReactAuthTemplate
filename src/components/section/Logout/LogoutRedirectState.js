@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 
-import * as myActions from "../../../redux/actions/index";
+import * as myActions from "../../../store/actions/index";
 
-class LogoutPage extends Component {
+class Logout extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired
   };
@@ -22,4 +22,4 @@ class LogoutPage extends Component {
 
 }
 
-export default connect()(LogoutPage);
+export default connect()(Logout);

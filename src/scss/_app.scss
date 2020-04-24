@@ -44,26 +44,31 @@ $selected-UI: $light-ui;
   
 }
 
+div.content-nav {
+
+  height: 70px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  div.content-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+}
+
 .content {
   height: 100%;
   display: flexbox;
   background-color: rgba(255, 255, 255, 0.911);
 }
 
-
-header.navbar {
-  border-bottom: 5px solid rgba(27, 27, 27, 0.123);
+body > div.MuiDrawer-root.MuiDrawer-modal > div.MuiPaper-root.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.MuiPaper-elevation16 {
+  overflow-x: hidden;
+}
+div.menuBtn {
+  display: flexbox;
 }
 
-div.content-footer {
-   border-bottom: 5px solid rgba(0, 0, 0, 0.239);
-   position: fixed;
-   display: flexbox;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   height: 10%;
-   background-color: royalblue;
-   color: white;
-   text-align: center;
-}

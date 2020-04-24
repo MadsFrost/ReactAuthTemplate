@@ -2,7 +2,7 @@ import React from 'react'
 
 const TestSection = () => {
     return (
-        <p>Hey</p>
+        <p>None</p>
     )
 }
 

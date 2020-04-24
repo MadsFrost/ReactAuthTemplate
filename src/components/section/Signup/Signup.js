@@ -1,11 +1,11 @@
-import React from 'react'
-
+import React from 'react';
+import UserForm from './Form/UserForm';
 const Signup = () => {
 
 
     return (
         <div>
-            <h1>You can sign up here!</h1>
+            <UserForm/>
         </div>
     )
 }
