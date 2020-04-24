@@ -138,7 +138,7 @@ export default function SwipeNavigation() {
             <ListItem>
               <div>
                 <div className="listFooterAddress">
-                  <h4>Luderapp.dk</h4>
+                  <h4>Voresapp.dk</h4>
                   <p>Random Gade 34</p>
                   <p>1930 København V</p>
                   <p>+47 47172572</p>

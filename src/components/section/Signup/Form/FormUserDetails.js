@@ -2,7 +2,11 @@ import React from 'react';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import '../../../../scss/modules/_signup.scss';
-const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate} ) => {
+import 'react-phone-number-input/style.css';
+import PhoneInput from 'react-phone-number-input';
+import flags from 'react-phone-number-input/flags';
+
+const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, handleChangePhone} ) => {
   
   return (
     <div className="wrapper">
@@ -74,6 +78,38 @@ const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate} ) =
               name="password"
               onChange={handleChange}
               defaultValue={values.password}
+            />
+            {values.formErrorsMessages.password.length > 0 && (
+              <span className="errorMessage">{values.formErrorsMessages.password}</span>
+            )}
+          </div>
+          <div className="phoneNumber">
+            <PhoneInput
+              flags={flags}
+              defaultCountry="DK"
+              id="input-form-phoneNumber"
+              className={values.formErrorsMessages.password.length > 0 ? "error" : "correct"}
+              placeholder="Phone Number *"
+              autoComplete="current-phone"
+              type="text"
+              name="phoneNumber"
+              onChange={handleChangePhone}
+              value={values.phoneNumber}
+            />
+            {values.formErrorsMessages.password.length > 0 && (
+              <span className="errorMessage">{values.formErrorsMessages.password}</span>
+            )}
+          </div>
+          <div className="areaCode">
+            <input
+              id="input-form-areacode"
+              className={values.formErrorsMessages.password.length > 0 ? "error" : "correct"}
+              placeholder="Areacode *"
+              autoComplete="current-areacode"
+              type="areaCode"
+              name="areaCode"
+              onChange={handleChange}
+              defaultValue={values.area}
             />
             {values.formErrorsMessages.password.length > 0 && (
               <span className="errorMessage">{values.formErrorsMessages.password}</span>
