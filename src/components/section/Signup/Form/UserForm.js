@@ -4,27 +4,26 @@ import PrivacyDetails from './PrivacyDetails';
 import Success from './Success';
 import * as Constants from '../../../../constants';
 import isValidBirthdate from 'is-valid-birthdate';
-import { isValidPhoneNumber } from 'react-phone-number-input'
+import { isValidPhoneNumber, formatPhoneNumberIntl } from 'react-phone-number-input'
+
 
 export class UserForm extends Component {
 
   state = {
     step: Constants.LOGIN_PAGE,
-    birthDate: new Date(1990, 1, 1),
-    name: null,
+    birthdate: new Date(1990, 1, 1),
+    user_name: null,
     area: null,
     email: null,
     password: null,
-    phoneNumber: null,
+    phone_number: "+45",
     formErrorsMessages: {
-      name: "",
+      user_name: "",
       email: "",
       password: "",
-      birthday: "",
-      phone: ""
+      birthdate: "",
+      phone_number: ""
     },
-    comTrayProduct: false,
-    comOtherProducts: false
   };
 
   // Proceed to the next step  
@@ -58,8 +57,8 @@ export class UserForm extends Component {
     let formErrorsMessages = { ...this.state.formErrorsMessages };
 
     switch (name) {
-      case "name":
-        formErrorsMessages.name = Constants.NAME_CHECK(value) ? "" : "minimum 2 characters required" 
+      case "user_name":
+        formErrorsMessages.user_name = Constants.NAME_CHECK(value) ? "" : "minimum 2 characters required" 
         break;
       case "email":
         formErrorsMessages.email = Constants.EMAIL_REGEX.test(value) ? "" : "invalid email address";
@@ -77,32 +76,36 @@ export class UserForm extends Component {
 
   handleChangeDate = date => {
     if (isValidBirthdate(date, { minAge: 18, maxAge: 100 })) {
-        this.state.formErrorsMessages.birthday = "";
+        this.state.formErrorsMessages.birthdate = "";
         this.setState({
-            birthDate: date
+            birthdate: date
         });
     console.log("Valid")
     }
 
     else {
-        this.state.formErrorsMessages.birthday = "Wrong birthday";
+        this.state.formErrorsMessages.birthdate = "Wrong birthday";
         console.log("Not valid")
     }
   };
 
   handleChangePhone = number => {
-    if (isValidPhoneNumber(number)) {
-      console.log(number)
-        this.state.formErrorsMessages.phone = "";
+    const newNumber = number;
+    if (isValidPhoneNumber(newNumber)) {
+      console.log(newNumber)
+        this.state.formErrorsMessages.phone_number = "";
+        
+        
+        const formattedNum = formatPhoneNumberIntl(newNumber);
         this.setState({
-            phoneNumber: number
+            phone_number: newNumber
         });
-        console.log(number + "is valid!!")
+        console.log(newNumber + "is valid!!")
     }
 
       else {
-        console.log(number + "Is not valid..");
-        this.state.formErrorsMessages.phone = "Number not valid";
+        console.log(newNumber + "Is not valid..");
+        this.state.formErrorsMessages.phone_number = "Number not valid";
       }
 
   };
@@ -112,9 +115,13 @@ export class UserForm extends Component {
     this.setState({ ...this.state, [name]: e.target.checked})
   };
 
+  handleSignup = () => {
+    const valuesToSubmit = "hei";
+  }
+
   render() {
-    const { step, name, area, phoneNumber, birthDate, email, password, formErrorsMessages } = this.state
-    const values = { name, area, phoneNumber, birthDate, email, password, formErrorsMessages, area }
+    const { step, user_name, area, phone_number, birthdate, email, password, formErrorsMessages } = this.state
+    const values = { user_name, area, phone_number, birthdate, email, password, formErrorsMessages}
     const { handleChange, handlePrivacy, nextStep, prevStep} = this
     // eslint-disable-next-line default-case
     switch(step) {
@@ -146,6 +153,8 @@ export class UserForm extends Component {
             <Success
               prevStep = {prevStep}
             />
+
+            {this.handleSignup()}
           </div>
         )
     } 

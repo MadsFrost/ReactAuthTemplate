@@ -5,6 +5,7 @@ import '../../../../scss/modules/_signup.scss';
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
 import flags from 'react-phone-number-input/flags';
+import { isValidPhoneNumber } from 'react-phone-number-input';
 
 const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, handleChangePhone} ) => {
   
@@ -18,39 +19,40 @@ const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, han
         </div>
         <form noValidate className="form">
           <div className="name">
+          <label htmlFor="" style={{display: "none"}}>hidden label to mislead chrome autocomplete</label>
             <input
               id="input-form-name"
-              className={values.formErrorsMessages.name.length > 0 ? "error" : "correct"}
+              autoComplete="cc-name"
+              className={values.formErrorsMessages.user_name.length > 0 ? "error" : "correct"}
               placeholder="Name *"
-              autoComplete="current-name"
               type="text"
-              name="name"
+              name="user_name"
               noValidate
               onChange={handleChange}
-              defaultValue={values.name}
+              defaultValue={values.user_name}
             />
-            {values.formErrorsMessages.name.length > 0 && (
-              <span className="errorMessage">{values.formErrorsMessages.name}</span>
+            {values.formErrorsMessages.user_name.length > 0 && (
+              <span className="errorMessage">{values.formErrorsMessages.user_name}</span>
             )}
           </div>
           <div className="birth_date">
             <DatePicker
-                selected={values.birthDate}
-                id="input-form-birthday"
+                selected={values.birthdate}
+                id="input-form-birthdate"
                 placeholder="Birthday"
                 autoComplete="birthdate"
                 type="date"
-                name="birthday"
+                name="birthdate"
                 onChange={handleChangeDate}
-                defaultValue={values.birthDate}
+                defaultValue={values.birthdate}
                 showYearDropdown={true}
                 showMonthDropdown={true}
                 minDate={new Date(1920, 1, 1)}
                 
             />
-            {values.formErrorsMessages.birthday.length > 0 && (
-            console.log(values.formErrorsMessages.birthday),
-              <span className="errorMessage">{values.formErrorsMessages.birthday}</span>
+            {values.formErrorsMessages.birthdate.length > 0 && (
+            console.log(values.formErrorsMessages.birthdate),
+              <span className="errorMessage">{values.formErrorsMessages.birthdate}</span>
             )}
           </div>
           <div className="email">
@@ -87,14 +89,14 @@ const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, han
             <PhoneInput
               flags={flags}
               defaultCountry="DK"
+              className={isValidPhoneNumber(values.phone_number)? "correct":"error"}
               id="input-form-phoneNumber"
-              className={values.formErrorsMessages.password.length > 0 ? "error" : "correct"}
               placeholder="Phone Number *"
               autoComplete="current-phone"
               type="text"
-              name="phoneNumber"
+              name="phone_number"
               onChange={handleChangePhone}
-              value={values.phoneNumber}
+              value={values.phone_number}
             />
             {values.formErrorsMessages.password.length > 0 && (
               <span className="errorMessage">{values.formErrorsMessages.password}</span>
@@ -106,8 +108,8 @@ const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, han
               className={values.formErrorsMessages.password.length > 0 ? "error" : "correct"}
               placeholder="Areacode *"
               autoComplete="current-areacode"
-              type="areaCode"
-              name="areaCode"
+              type="number"
+              name="area"
               onChange={handleChange}
               defaultValue={values.area}
             />
