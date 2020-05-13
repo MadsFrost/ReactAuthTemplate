@@ -7,9 +7,17 @@ import PhoneInput from 'react-phone-number-input';
 import flags from 'react-phone-number-input/flags';
 import { isValidPhoneNumber } from 'react-phone-number-input';
 
+const ext = (
+  <input
+    value={""}
+    type="number"
+    noValidate />
+)
+
 const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, handleChangePhone} ) => {
-  
+
   return (
+    
     <div className="wrapper">
       <div className="form-wrapper">
         <div className='page-detail'>
@@ -97,6 +105,7 @@ const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, han
               name="phone_number"
               onChange={handleChangePhone}
               value={values.phone_number}
+              ext={handleChangeExt(ext)}
             />
             {values.formErrorsMessages.password.length > 0 && (
               <span className="errorMessage">{values.formErrorsMessages.password}</span>

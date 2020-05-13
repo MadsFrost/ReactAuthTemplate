@@ -4,19 +4,20 @@ import PrivacyDetails from './PrivacyDetails';
 import Success from './Success';
 import * as Constants from '../../../../constants';
 import isValidBirthdate from 'is-valid-birthdate';
-import { isValidPhoneNumber, formatPhoneNumberIntl } from 'react-phone-number-input'
+import { isValidPhoneNumber, formatPhoneNumberIntl, parseRFC3966 } from 'react-phone-number-input'
 
 
 export class UserForm extends Component {
 
   state = {
     step: Constants.LOGIN_PAGE,
-    birthdate: new Date(1990, 1, 1),
+    birthdate: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()),
     user_name: null,
     area: null,
     email: null,
     password: null,
-    phone_number: "+45",
+    phone_number: "",
+    phone_extension: "+45", 
     formErrorsMessages: {
       user_name: "",
       email: "",
@@ -29,16 +30,36 @@ export class UserForm extends Component {
   // Proceed to the next step  
   nextStep = (e) => {
     e.preventDefault()
-    const { step } = this.state
-    if (Constants.FORM_VALID(this.state)) {
-      this.setState({
-        step: step + 1
-      })
-    } else {
-      return(
-          alert("Couldn't continue. Please check your information again.")
-          );
+    if (this.state.step === 1) {
+      if (isValidBirthdate(this.state.birthdate, { minAge: 18, maxAge: 100 })) {
+          const date = this.state.birthdate
+          const newBirthday = (date.toLocaleDateString().split("T")[0])
+          console.log(date.toLocaleDateString(), newBirthday)
+          this.setState({
+            birthdate: newBirthday
+          })
+
+      } else {
+          return(
+              alert("Couldn't continue. Please check your information again.")
+              );
+      }
     }
+
+      this.state.formErrorsMessages.phone_number = "";
+      const { step } = this.state
+      if (Constants.FORM_VALID(this.state)) {
+        this.setState({
+          step: step + 1,
+        })
+
+    }
+
+    else {
+      this.state.formErrorsMessages.birthdate = "Wrong birthday";
+      console.log("Not valid")
+  }
+    
   };
 
   // Proceed to the previous step on back button 
@@ -75,17 +96,21 @@ export class UserForm extends Component {
   };
 
   handleChangeDate = date => {
-    if (isValidBirthdate(date, { minAge: 18, maxAge: 100 })) {
+    console.log(date)
+    if (date) {
+      if (isValidBirthdate(date, { minAge: 18, maxAge: 100 })) {
         this.state.formErrorsMessages.birthdate = "";
         this.setState({
             birthdate: date
+        
         });
-    console.log("Valid")
-    }
+        console.log("Valid")
+      }
 
-    else {
-        this.state.formErrorsMessages.birthdate = "Wrong birthday";
-        console.log("Not valid")
+      else {
+          this.state.formErrorsMessages.birthdate = "Wrong birthday";
+          console.log("Not valid")
+      }
     }
   };
 
@@ -109,6 +134,16 @@ export class UserForm extends Component {
       }
 
   };
+
+  handleChangeExt = extension => {
+    const newExtension = extension;
+    if (isValidPhoneNumber(this.state.phone_number)) {
+      this.setState({
+        phone_extension: newExtension
+    })
+
+  };
+
 
   // Handle user privacy details
   handlePrivacy = name => e => {
