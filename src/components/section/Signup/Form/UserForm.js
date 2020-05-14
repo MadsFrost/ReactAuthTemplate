@@ -140,7 +140,8 @@ export class UserForm extends Component {
     if (isValidPhoneNumber(this.state.phone_number)) {
       this.setState({
         phone_extension: newExtension
-    })
+    });
+  }
 
   };
 
@@ -167,6 +168,7 @@ export class UserForm extends Component {
             handleChange = {handleChange}
             handleChangeDate = {this.handleChangeDate}
             handleChangePhone = {this.handleChangePhone}
+            handleChangeExt = {this.handleChangeExt}
             values = {values}
           />
         )
@@ -193,7 +195,7 @@ export class UserForm extends Component {
           </div>
         )
     } 
-  }
-};
+  };
+}
 
 export default UserForm;

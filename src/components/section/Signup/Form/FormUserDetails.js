@@ -14,7 +14,7 @@ const ext = (
     noValidate />
 )
 
-const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, handleChangePhone} ) => {
+const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, handleChangePhone, handleChangeExt} ) => {
 
   return (
     
