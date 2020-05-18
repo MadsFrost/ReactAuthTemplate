@@ -24,6 +24,7 @@
     "react-from-json": "^0.7.1",
     "react-html-parser": "^2.0.2",
     "react-icons": "^3.10.0",
+    "react-material-ui-form-validator": "^2.0.10",
     "react-media": "^1.10.0",
     "react-phone-input-2": "^2.13.3",
     "react-phone-number-input": "^3.0.22",
