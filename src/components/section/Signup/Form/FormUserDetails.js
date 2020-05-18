@@ -7,14 +7,8 @@ import PhoneInput from 'react-phone-number-input';
 import flags from 'react-phone-number-input/flags';
 import { isValidPhoneNumber } from 'react-phone-number-input';
 
-const ext = (
-  <input
-    value={""}
-    type="number"
-    noValidate />
-)
 
-const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, handleChangePhone, handleChangeExt} ) => {
+const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, handleChangePhone} ) => {
 
   return (
     
@@ -97,15 +91,14 @@ const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, han
             <PhoneInput
               flags={flags}
               defaultCountry="DK"
-              className={isValidPhoneNumber(values.phone_number)? "correct":"error"}
+              className={isValidPhoneNumber(values.phone_extension + values.phone_number)? "correct":"error"}
               id="input-form-phoneNumber"
               placeholder="Phone Number *"
               autoComplete="current-phone"
               type="text"
               name="phone_number"
               onChange={handleChangePhone}
-              value={values.phone_number}
-              ext={handleChangeExt(ext)}
+              value={values.phone_extension + values.phone_number}
             />
             {values.formErrorsMessages.password.length > 0 && (
               <span className="errorMessage">{values.formErrorsMessages.password}</span>
@@ -126,6 +119,7 @@ const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, han
               <span className="errorMessage">{values.formErrorsMessages.password}</span>
             )}
           </div>
+          
           <button 
             type="submit" 
             id='btn-next' 

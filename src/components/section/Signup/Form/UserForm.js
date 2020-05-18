@@ -4,7 +4,7 @@ import PrivacyDetails from './PrivacyDetails';
 import Success from './Success';
 import * as Constants from '../../../../constants';
 import isValidBirthdate from 'is-valid-birthdate';
-import { isValidPhoneNumber, formatPhoneNumberIntl, parseRFC3966 } from 'react-phone-number-input'
+import { isValidPhoneNumber, formatPhoneNumberIntl, parsePhoneNumber, parseRFC3966 } from 'react-phone-number-input'
 
 
 export class UserForm extends Component {
@@ -96,7 +96,6 @@ export class UserForm extends Component {
   };
 
   handleChangeDate = date => {
-    console.log(date)
     if (date) {
       if (isValidBirthdate(date, { minAge: 18, maxAge: 100 })) {
         this.state.formErrorsMessages.birthdate = "";
@@ -116,17 +115,23 @@ export class UserForm extends Component {
 
   handleChangePhone = number => {
     const newNumber = number;
+
     if (isValidPhoneNumber(newNumber)) {
       console.log(newNumber)
         this.state.formErrorsMessages.phone_number = "";
-        
-        
+
+
         const formattedNum = formatPhoneNumberIntl(newNumber);
+        console.log(formattedNum)
+        const numExt = formattedNum.substr(0,formattedNum.indexOf(' ')); // "72"
+        const numPhone = formattedNum.substr(formattedNum.indexOf(' ')+1); // "tocirah sneab"
         this.setState({
-            phone_number: newNumber
+            phone_number: numPhone,
+            phone_extension: numExt
         });
         console.log(newNumber + "is valid!!")
     }
+
 
       else {
         console.log(newNumber + "Is not valid..");
@@ -135,15 +140,6 @@ export class UserForm extends Component {
 
   };
 
-  handleChangeExt = extension => {
-    const newExtension = extension;
-    if (isValidPhoneNumber(this.state.phone_number)) {
-      this.setState({
-        phone_extension: newExtension
-    });
-  }
-
-  };
 
 
   // Handle user privacy details
@@ -156,10 +152,11 @@ export class UserForm extends Component {
   }
 
   render() {
-    const { step, user_name, area, phone_number, birthdate, email, password, formErrorsMessages } = this.state
-    const values = { user_name, area, phone_number, birthdate, email, password, formErrorsMessages}
+    const { step, user_name, area, phone_number, phone_extension, birthdate, email, password, formErrorsMessages } = this.state
+    const values = { user_name, area, phone_number, phone_extension, birthdate, email, password, formErrorsMessages}
     const { handleChange, handlePrivacy, nextStep, prevStep} = this
     // eslint-disable-next-line default-case
+    console.log(this.state.phone_extension);
     switch(step) {
       case Constants.LOGIN_PAGE: 
         return (
@@ -168,7 +165,6 @@ export class UserForm extends Component {
             handleChange = {handleChange}
             handleChangeDate = {this.handleChangeDate}
             handleChangePhone = {this.handleChangePhone}
-            handleChangeExt = {this.handleChangeExt}
             values = {values}
           />
         )
