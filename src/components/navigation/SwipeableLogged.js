@@ -79,7 +79,7 @@ export default function SwipeNavigation() {
 
           <Link to="/">
             <ListItem button>
-              <ListItemText primary={"Explore"}/>
+              <ListItemText primary={"MinApp"}/>
             </ListItem>
           </Link>
 

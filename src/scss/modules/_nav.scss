@@ -15,13 +15,14 @@
 }
 
 .drawerUpper {
-    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 63%);
+    background-color:rgb(250, 97, 51);
     width: calc(100% + 20px);
+    transition: width 1s;
 }
 
 .drawerUpper:hover {
-    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 73%);
-    width: calc(100% + 20px);
+    background-color:rgb(218, 89, 49);
+    width: calc(100% + 50px);
 }
 
 div.MuiBackdrop-root {
@@ -29,10 +30,14 @@ div.MuiBackdrop-root {
 }
 
 div.MuiListItemText-root > span {
-    color: black;
+    font-size: 18px;
 }   
+body > div.MuiDrawer-root{
+    background-color: rgba(0, 0, 0, 0.226);
+}
+#root > div > div > div > div.content-nav > div > div > a > button > span.MuiButton-label > svg {
 
-
+}
 #root > div > div > div > div.content-nav > div > button { 
     height: 100%;
     width: 100%;
@@ -51,6 +56,7 @@ div.navbarMenu {
     align-content: center;
     justify-content: space-between;
     height: 100%;
+    background-color: rgba(0, 0, 0, 0.178);
 }
 
 
@@ -62,9 +68,16 @@ div.navbarMenu a {
 div.navbarMenu button {
     height: 100%;
 }
+div.MuiPaper-root {
+ // Root for drawer
+ background-color: rgba(255, 255, 255, 0.911);
+}
 
+div.MuiPaper-root a, p, span, h1, h2, h3, h4 {
+    color: rgb(37, 33, 33);
+}
 svg.activeNavExplore {
-    color: rgb(253, 116, 75);
+    color: rgba(250, 103, 58, 0.931);
     backdrop-filter: drop-shadow(4px 4px 10px blue);
 }
 

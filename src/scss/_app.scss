@@ -28,11 +28,27 @@
   - Set Variables for different themes
   - Try out different types of UI
 */
-
+$img:"../assets/bg/priv.jpg";
 $selected-UI: $light-ui;
+body::before {
+  content: '';
+  background: url($img) 0 0 / cover fixed no-repeat;
+  filter: blur(13px);
+  position: absolute;
+  left:0; top:0; right:0; bottom:0;
+  z-index: -1;
+  pointer-events: none;
+}
 
+body {
+  background-color: black;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  
+}
 .main { 
-  background: map-get($map: $selected-UI, $key: "background");
   font-family: map-get($map: $selected-UI, $key: "font-family");
   margin: 0 auto;
   height: 100vh;
@@ -40,12 +56,10 @@ $selected-UI: $light-ui;
   display: flex;
   align-content: center;
   justify-content: flex-start;
-  flex-direction: column;
-  
+  flex-direction: column;  
 }
 
 div.content-nav {
-
   height: 70px;
 }
 
@@ -57,10 +71,12 @@ div.content-nav {
     width: 100%;
   }
   
+  body::before {
+    background-size: 100% 100%;
+  }
 }
 
 .content {
-  height: 100%;
   display: flexbox;
   background-color: rgba(255, 255, 255, 0.911);
 }

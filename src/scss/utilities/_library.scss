@@ -14,7 +14,9 @@
 // Variations of UI-sets of gradients with color accents
 
 $light-ui: (
-  background: white,
+  background-image: url("../../assets/bg/priv.jpg"),
+  background-repeat: no-repeat,
+  background-size: 100% 100%,
   main: #fdfbfb,
   font-family: 'Roboto',
   primary-color: #0463f18f,

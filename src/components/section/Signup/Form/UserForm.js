@@ -45,8 +45,8 @@ export class UserForm extends Component {
               );
       }
     }
-
-      this.state.formErrorsMessages.phone_number = "";
+// eslint-disable-next-line
+    this.state.formErrorsMessages.phone_number = "";
       const { step } = this.state
       if (Constants.FORM_VALID(this.state)) {
         this.setState({
@@ -56,6 +56,7 @@ export class UserForm extends Component {
     }
 
     else {
+      // eslint-disable-next-line
       this.state.formErrorsMessages.birthdate = "Wrong birthday";
       console.log("Not valid")
   }
@@ -98,6 +99,7 @@ export class UserForm extends Component {
   handleChangeDate = date => {
     if (date) {
       if (isValidBirthdate(date, { minAge: 18, maxAge: 100 })) {
+        // eslint-disable-next-line
         this.state.formErrorsMessages.birthdate = "";
         this.setState({
             birthdate: date
@@ -107,6 +109,7 @@ export class UserForm extends Component {
       }
 
       else {
+        // eslint-disable-next-line
           this.state.formErrorsMessages.birthdate = "Wrong birthday";
           console.log("Not valid")
       }
@@ -118,6 +121,7 @@ export class UserForm extends Component {
 
     if (isValidPhoneNumber(newNumber)) {
       console.log(newNumber)
+      // eslint-disable-next-line
         this.state.formErrorsMessages.phone_number = "";
 
 
@@ -135,6 +139,7 @@ export class UserForm extends Component {
 
       else {
         console.log(newNumber + "Is not valid..");
+        // eslint-disable-next-line
         this.state.formErrorsMessages.phone_number = "Number not valid";
       }
 
@@ -148,7 +153,7 @@ export class UserForm extends Component {
   };
 
   handleSignup = () => {
-    const valuesToSubmit = "hei";
+    //API CALL HERE
   }
 
   render() {

@@ -21,7 +21,7 @@ const PrivacyDetails = ({handlePrivacy, comTrayProduct, comOtherProducts, nextSt
           />
           <label 
             id='label-txt' 
-            htmlFor="comTrayProduct">Receive updates about Tray.io product by email
+            htmlFor="comTrayProduct">We won't give out your information
           </label>
         </div>
         <br/>
