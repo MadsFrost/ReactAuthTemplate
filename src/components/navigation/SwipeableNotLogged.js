@@ -36,16 +36,16 @@ const useStyles = makeStyles({
   },
   exploreIconNav: {
     fontSize: '50px',
-    color: '#C4C8CF',
+    color: 'grey',
     paddingBottom: '20px',
 
   },
   menuIcon: {
-    color: '#C4C8CF',
+    color: 'grey',
     fontSize: '50px',
   },
   signUpIconNav: {
-    color: '#C4C8CF',
+    color: 'grey',
     fontSize: '50px',
   }
 });

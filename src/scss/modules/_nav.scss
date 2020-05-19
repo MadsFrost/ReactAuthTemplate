@@ -1,3 +1,5 @@
+$img: "../../assets/bg/priv-nav-btn.jpg";
+
 .drawerUpper a {
     text-decoration: none;
 }
@@ -10,19 +12,29 @@
 .drawerUpper div.MuiListItemText-root > span {
     font-weight: bold;
     text-decoration: none;
-    color: white;
+    color: #e22b62f5;
     font-size: 32px;
 }
 
+.drawerUpper::before {
+        content: '';
+        position: absolute;
+        filter: blur(2px);
+        left:0; top:0; right:0; bottom:0px;
+        z-index: -1;
+        pointer-events: none;
+      
+  }
+  
 .drawerUpper {
-    background-color:rgb(250, 97, 51);
+    z-index: -2;
     width: calc(100% + 20px);
     transition: width 1s;
+    overflow: hidden;
 }
 
 .drawerUpper:hover {
-    background-color:rgb(218, 89, 49);
-    width: calc(100% + 50px);
+    width: calc(100% + 20px);
 }
 
 div.MuiBackdrop-root {
@@ -56,7 +68,6 @@ div.navbarMenu {
     align-content: center;
     justify-content: space-between;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.178);
 }
 
 
@@ -71,13 +82,14 @@ div.navbarMenu button {
 div.MuiPaper-root {
  // Root for drawer
  background-color: rgba(255, 255, 255, 0.911);
+ overflow: hidden;
 }
 
 div.MuiPaper-root a, p, span, h1, h2, h3, h4 {
     color: rgb(37, 33, 33);
 }
 svg.activeNavExplore {
-    color: rgba(250, 103, 58, 0.931);
+    color: #ff3a75f5;
     backdrop-filter: drop-shadow(4px 4px 10px blue);
 }
 

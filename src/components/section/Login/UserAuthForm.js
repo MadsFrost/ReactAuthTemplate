@@ -4,6 +4,7 @@ import validate from './LoginFormValidationRules';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from "react-router-dom";
 import { loggedon } from "../../../store/actions/index";
+import "../../../scss/base/_section.scss";
 
 const UserAuthForm = () => {
   const {
@@ -28,8 +29,8 @@ const UserAuthForm = () => {
   return (
     <div className="section is-fullheight">
       <div className="container">
-        <div className="column is-4 is-offset-4">
-          <div className="box">
+        <div>
+          <h1 className="sectionHeader">Login</h1>
             <form onSubmit={handleSubmit} noValidate>
               <div className="field">
                 <label className="label">Email Address</label>
@@ -51,7 +52,6 @@ const UserAuthForm = () => {
               </div>
               <button type="submit" className="button is-block is-info is-fullwidth" onClick={() => dispatch(loggedon())}>Login</button>
             </form>
-          </div>
         </div>
       </div>
     </div>

@@ -11,7 +11,7 @@ export class UserForm extends Component {
 
   state = {
     step: Constants.LOGIN_PAGE,
-    birthdate: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()),
+    birthdate: new Date(2000, 0, 1),
     user_name: null,
     area: null,
     email: null,

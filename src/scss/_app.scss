@@ -32,7 +32,7 @@ $img:"../assets/bg/priv.jpg";
 $selected-UI: $light-ui;
 body::before {
   content: '';
-  background: url($img) 0 0 / cover fixed no-repeat;
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
   filter: blur(13px);
   position: absolute;
   left:0; top:0; right:0; bottom:0;
@@ -41,12 +41,10 @@ body::before {
 }
 
 body {
-  background-color: black;
   display:flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  
 }
 .main { 
   font-family: map-get($map: $selected-UI, $key: "font-family");
@@ -61,6 +59,10 @@ body {
 
 div.content-nav {
   height: 70px;
+  padding-top: 2px;
+  -webkit-box-shadow: 0px 6px 5px 2px rgba(0,0,0,0.05);
+  -moz-box-shadow: 0px 6px 5px 2px rgba(0,0,0,0.05);
+
 }
 
 
@@ -73,12 +75,16 @@ div.content-nav {
   
   body::before {
     background-size: 100% 100%;
-  }
+      background-image: linear-gradient(to bottom, #dfe9f3 0%, white 100%);
+}
 }
 
 .content {
   display: flexbox;
-  background-color: rgba(255, 255, 255, 0.911);
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+  height: 100%;
 }
 
 body > div.MuiDrawer-root.MuiDrawer-modal > div.MuiPaper-root.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.MuiPaper-elevation16 {
@@ -87,4 +93,6 @@ body > div.MuiDrawer-root.MuiDrawer-modal > div.MuiPaper-root.MuiDrawer-paper.Mu
 div.menuBtn {
   display: flexbox;
 }
+
+
 

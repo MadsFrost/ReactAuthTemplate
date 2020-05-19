@@ -38,18 +38,22 @@ const useStyles = makeStyles({
   },
   exploreIconNav: {
     fontSize: '50px',
-    color: '#C4C8CF',
+    color: 'grey',
     paddingBottom: '20px',
 
   },
   menuIcon: {
-    color: '#dadfe6',
+    color: 'grey',
+    fontSize: '50px',
+  },
+  signUpIconNav: {
+    color: 'grey',
     fontSize: '50px',
   },
   AvatarIconNav: {
-    color: '#dadfe6',
-    fontSize: '50px',
-  },
+    color: 'grey',
+    fontSize: '50px'
+  }
 });
 
 export default function SwipeNavigation() {

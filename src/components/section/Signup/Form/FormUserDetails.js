@@ -49,6 +49,7 @@ const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, han
                 defaultValue={values.birthdate}
                 showYearDropdown={true}
                 showMonthDropdown={true}
+                scrollableYearDropdown={true}
                 minDate={new Date(1920, 1, 1)}
                 
             />
