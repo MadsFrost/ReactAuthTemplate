@@ -32,7 +32,8 @@ $img:"../assets/bg/priv.jpg";
 $selected-UI: $light-ui;
 body::before {
   content: '';
-  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  background-color: white;
+  background-image: linear-gradient(to bottom, #e8edf1 0%, white 100%);
   filter: blur(13px);
   position: absolute;
   left:0; top:0; right:0; bottom:0;
@@ -62,25 +63,65 @@ div.content-nav {
   padding-top: 2px;
   -webkit-box-shadow: 0px 6px 5px 2px rgba(0,0,0,0.05);
   -moz-box-shadow: 0px 6px 5px 2px rgba(0,0,0,0.05);
+  background-image: linear-gradient(to bottom, #e8edf1 0%, white 100%);
 
 }
 
 
+p.back-p {
+  opacity: 0.3;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-right: 30px;
+  height: 50px;
+  width: 110px;
+  justify-content: center;
+  display: flex;
+  transition: 0.25s opacity ease;
+  font-weight: bold;
+}
+
+p.back-p:hover {
+  opacity: 1;
+  cursor: pointer;
+  color: #ff3a75f5;
+}
+
+p.back-p svg {
+  margin-top: -10px;
+  margin-right: 5px;
+  font-size: 60px;
+}
+
 @media only screen and (max-width: 600px) {
+  p.back-p {
+    opacity: 0.3;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 73px;
+    margin-right: -1px;
+    transform: scale(0.75);
+  }
   div.content-nav {
     position: fixed;
     bottom: 0;
     width: 100%;
+    height: 70px;
+    -webkit-box-shadow: 0px -2px 26px 2px rgba(0,0,0,0.09);
+-moz-box-shadow: 0px -2px 26px 2px rgba(0,0,0,0.09);
+box-shadow: 0px -2px 26px 2px rgba(0,0,0,0.09);
   }
   
   body::before {
     background-size: 100% 100%;
-      background-image: linear-gradient(to bottom, #dfe9f3 0%, white 100%);
+    background-image: linear-gradient(to top, #e8edf1 0%, white 100%);
 }
 }
 
 .content {
-  display: flexbox;
+  display: flex;
   justify-content: center;
   align-self: center;
   width: 100%;

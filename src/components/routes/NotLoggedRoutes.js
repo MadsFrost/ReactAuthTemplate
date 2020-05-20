@@ -4,11 +4,12 @@ import Signup from '../section/Signup/Signup';
 import UserAuthForm from '../section/Login/UserAuthForm';
 import Error404 from '../section/Error404/Error404';
 import TestSectionTwo from '../section/TestSection/TestSectionTwo';
+import Explore from '../section/Explore/Explore';
 
 const NotLoggedRoutes = () => {
     return (
         <Switch>
-            <Route exact path={"/"} component={withRouter(TestSectionTwo)}/>
+            <Route exact path={"/"} component={withRouter(Explore)}/>
             <Route path={"/login"} component={withRouter(UserAuthForm)}/>
             <Route path={"/signup"} component={Signup}/>  
             <Route path={"/logout"} component={() => <Redirect to="/"/>}/>

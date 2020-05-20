@@ -15,6 +15,7 @@ import MenuOpenIcon from '@material-ui/icons/MenuOpen';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 import PermIdentityIcon from '@material-ui/icons/PermIdentity';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
+import BackButton from '../section/Buttons/BackButton';
 
 import {
   Link, useLocation
@@ -37,7 +38,6 @@ const useStyles = makeStyles({
   exploreIconNav: {
     fontSize: '50px',
     color: 'grey',
-    paddingBottom: '20px',
 
   },
   menuIcon: {
@@ -133,6 +133,7 @@ export default function SwipeNavigation() {
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
   return (
     <div className="content-nav">
+      <BackButton/>
       {['left'].map((anchor) => (
         <React.Fragment key={anchor}>
           <div className="navbarMenu">

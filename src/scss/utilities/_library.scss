@@ -10,7 +10,9 @@
 
 */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700&subset=latin-ext');
 
+$selectedFont: ('Roboto');
 // Variations of UI-sets of gradients with color accents
 
 $light-ui: (
@@ -18,7 +20,7 @@ $light-ui: (
   background-repeat: no-repeat,
   background-size: 100% 100%,
   main: #fdfbfb,
-  font-family: 'Roboto',
+  font-family: $selectedFont,
   primary-color: #0463f18f,
   accent-color: darkgray,
 );

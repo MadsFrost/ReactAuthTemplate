@@ -1,0 +1,18 @@
+div.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    margin: 1% 0;
+    min-height: 200px;
+    background-color: rgb(231, 231, 231);
+    align-items: center;
+}
+
+div.login input {
+    border: none;
+    border-bottom: 5px solid grey;
+    background: transparent;
+    width: 100%;
+}

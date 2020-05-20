@@ -5,6 +5,7 @@ import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
 import Error404 from '../section/Error404/Error404';
 import TestSection from '../section/TestSection/TestSection';
 import TestSectionTwo from '../section/TestSection/TestSectionTwo';
+import Explore from '../section/Explore/Explore';
 
 import Logout from '../section/Logout/LogoutRedirectState';
 
@@ -13,7 +14,7 @@ import Logout from '../section/Logout/LogoutRedirectState';
 const LoggedRoutes = () => {
     return (
                 <Switch>
-                    <Route exact path={"/"} component={withRouter(TestSectionTwo)}/>
+                    <Route exact path={"/"} component={withRouter(Explore)}/>
                     <Route path={"/profile"}  component={withRouter(TestSection)}/>
                     <Route path={"/messages"} component={withRouter(TestSection)}/>
                     <Route path={"/listing"} component={withRouter(TestSection)}/>

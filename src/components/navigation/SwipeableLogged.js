@@ -17,6 +17,7 @@ import AddPhotoAlternateIcon from '@material-ui/icons/AddPhotoAlternate';
 import SettingsIcon from '@material-ui/icons/Settings';
 import LockIcon from '@material-ui/icons/Lock';
 import PersonIcon from '@material-ui/icons/Person';
+import BackButton from '../section/Buttons/BackButton';
 
 import {
   Link, useLocation
@@ -39,7 +40,6 @@ const useStyles = makeStyles({
   exploreIconNav: {
     fontSize: '50px',
     color: 'grey',
-    paddingBottom: '20px',
 
   },
   menuIcon: {
@@ -168,6 +168,7 @@ export default function SwipeNavigation() {
 
   return (
     <div className="content-nav">
+      <BackButton/>
       {['left'].map((anchor) => (
         <React.Fragment key={anchor}>
           <div className="navbarMenu">
