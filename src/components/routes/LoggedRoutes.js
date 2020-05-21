@@ -4,7 +4,6 @@ import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
 // Components Rendered
 import Error404 from '../section/Error404/Error404';
 import TestSection from '../section/TestSection/TestSection';
-import TestSectionTwo from '../section/TestSection/TestSectionTwo';
 import Explore from '../section/Explore/Explore';
 
 import Logout from '../section/Logout/LogoutRedirectState';

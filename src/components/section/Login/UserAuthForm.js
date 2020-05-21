@@ -2,10 +2,13 @@ import React from 'react';
 import useForm from "./useForm";
 import validate from './LoginFormValidationRules';
 import { useSelector, useDispatch } from 'react-redux';
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import { loggedon } from "../../../store/actions/index";
-import "../../../scss/modules/_authForms.scss";
-import {withRouter, useHistory} from 'react-router-dom';
+import "../../../scss/modules/_authFormLogin.scss";
+import {withRouter} from 'react-router-dom';
+import {ReactComponent as LoginAvatar} from './../../../assets/modules/auth.svg'
+import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
 
 const UserAuthForm = () => {
   const {
@@ -19,39 +22,54 @@ const UserAuthForm = () => {
   const dispatch = useDispatch();
 
   function login() {
-  
-      console.log('No errors, submit callback called!');
-      
+
       if (toggleLogged) {
         return <Redirect to="/"/>;
       }
   };
 
   return (
+  <div className="styleContainer">
+    <div className="masterContainer">
+      <div className="picture">
+        <LoginAvatar />
+      </div>
       <div className="login">
-          <h1 className="sectionHeader">Login</h1>
-            <form onSubmit={handleSubmit} noValidate>
+          <h1 className="sectionHeader">Hello There.</h1>
+          <p className="sectionDescription">Login or signup to continue.</p>
+            <form onSubmit={handleSubmit} noValidate className="go-bottom">
               <div className="field">
-                <label className="label">Email Address</label>
                 <div className="control">
-                  <input autoComplete="off" className={`input ${errors.email && 'is-danger'}`} type="email" name="email" onChange={handleChange} value={values.email || ''} required />
+                  <div className="inputAvatar">
+                    <AlternateEmailIcon/>
+                    <input autoComplete="off" className={`input ${errors.email && 'is-danger'}`} type="email" name="email" onChange={handleChange} value={values.email || ''} required />
+                    <label className="label">Email Address</label>
+                  </div>
+                  
                   {errors.email && (
                     <p className="help is-danger">{errors.email}</p>
                   )}
                 </div>
+
               </div>
               <div className="field">
-                <label className="label">Password</label>
                 <div className="control">
-                  <input className={`input ${errors.password && 'is-danger'}`} type="password" name="password" onChange={handleChange} value={values.password || ''} required />
+                  <div className="inputAvatar">
+                    <VpnKeyIcon/>
+                    <input className={`input ${errors.password && 'is-danger'}`}  type="password" name="password" onChange={handleChange} value={values.password || ''} required />
+                    <label className="label">Password</label>
+                  </div>
                 </div>
                 {errors.password && (
                   <p className="help is-danger">{errors.password}</p>
                 )}
               </div>
-              <button type="submit" className="button is-block is-info is-fullwidth" onClick={() => dispatch(loggedon())}>Login</button>
+              <button type="submit" className="formbutton" onClick={() => dispatch(loggedon())}>Login</button>
+              <Link to="/signup"><button type="submit" className="formbutton">Signup?</button></Link>
             </form>
       </div>
+    </div>
+  </div>
   );
 };
 

@@ -4,12 +4,13 @@ import PrivacyDetails from './PrivacyDetails';
 import Success from './Success';
 import * as Constants from '../../../../constants';
 import isValidBirthdate from 'is-valid-birthdate';
-import { isValidPhoneNumber, formatPhoneNumberIntl, parsePhoneNumber, parseRFC3966 } from 'react-phone-number-input'
-
+import { isValidPhoneNumber, formatPhoneNumberIntl} from 'react-phone-number-input'
+import { Redirect } from 'react-router-dom';
 
 export class UserForm extends Component {
 
   state = {
+    redirect: null,
     step: Constants.LOGIN_PAGE,
     birthdate: new Date(2000, 0, 1),
     user_name: null,
@@ -157,6 +158,10 @@ export class UserForm extends Component {
   }
 
   render() {
+
+    if (this.state.redirect) {
+      return <Redirect to={this.state.redirect} />
+    }
     const { step, user_name, area, phone_number, phone_extension, birthdate, email, password, formErrorsMessages } = this.state
     const values = { user_name, area, phone_number, phone_extension, birthdate, email, password, formErrorsMessages}
     const { handleChange, handlePrivacy, nextStep, prevStep} = this
@@ -165,13 +170,16 @@ export class UserForm extends Component {
     switch(step) {
       case Constants.LOGIN_PAGE: 
         return (
-          <FormUserDetails 
-            nextStep = {this.nextStep}
-            handleChange = {handleChange}
-            handleChangeDate = {this.handleChangeDate}
-            handleChangePhone = {this.handleChangePhone}
-            values = {values}
-          />
+          <div>
+            <FormUserDetails 
+              nextStep = {this.nextStep}
+              handleChange = {handleChange}
+              handleChangeDate = {this.handleChangeDate}
+              handleChangePhone = {this.handleChangePhone}
+              values = {values}
+            />
+            <button onClick={() => this.setState({ redirect: "/login" })}>Did you mean to login?</button> 
+          </div>
         )
       case Constants.PRIVACY_PAGE:
         return (
@@ -195,6 +203,7 @@ export class UserForm extends Component {
             {this.handleSignup()}
           </div>
         )
+      default:
     } 
   };
 }

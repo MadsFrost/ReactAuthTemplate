@@ -7,7 +7,6 @@ import PhoneInput from 'react-phone-number-input';
 import flags from 'react-phone-number-input/flags';
 import { isValidPhoneNumber } from 'react-phone-number-input';
 
-
 const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, handleChangePhone} ) => {
 
   return (

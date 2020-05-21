@@ -3,7 +3,6 @@ import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
 import Signup from '../section/Signup/Signup';
 import UserAuthForm from '../section/Login/UserAuthForm';
 import Error404 from '../section/Error404/Error404';
-import TestSectionTwo from '../section/TestSection/TestSectionTwo';
 import Explore from '../section/Explore/Explore';
 
 const NotLoggedRoutes = () => {

@@ -6,14 +6,14 @@ export const SUCCESS_PAGE = 2
 export const FORM_VALID = ({ formErrorsMessages, birthDate, area, phoneNumber, ...rest}) => {
   let valid = true;
   // validate form errors is empty
-  /*
+  
   Object.values(formErrorsMessages).forEach(val => {
     val.length > 0 && (valid = false);
   });
   // validate the form with user details is filled out
   Object.values(rest).forEach(val => {
     val === null && (valid = false);
-  }); */
+  }); 
   // Otherwise the form is valid
   return valid;
 };
