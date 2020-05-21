@@ -46,7 +46,7 @@ const UserAuthForm = () => {
                 <div className="control">
                   <div className="inputAvatar">
                     <AlternateEmailIcon/>
-                    <input autoComplete="off" className={`input ${errors.email && 'is-danger'}`} type="email" name="email" onChange={handleChange} value={values.email || ''} required />
+                    <input autoComplete="off" placeholder="billnyethe@science.guy"className={`input ${errors.email && 'is-danger'}`} type="email" name="email" onChange={handleChange} value={values.email || ''} required />
                     <label className="label">Email Address</label>
                   </div>
                   
@@ -60,7 +60,7 @@ const UserAuthForm = () => {
                 <div className="control">
                   <div className="inputAvatar">
                     <VpnKeyIcon/>
-                    <input className={`input ${errors.password && 'is-danger'}`}  type="password" name="password" onChange={handleChange} value={values.password || ''} required />
+                    <input className={`input ${errors.password && 'is-danger'}`}  placeholder="***********" type="password" name="password" onChange={handleChange} value={values.password || ''} required />
                     <label className="label">Password</label>
                   </div>
                 </div>

@@ -97,6 +97,9 @@ p.back-p svg {
 }
 
 @media only screen and (max-width: 600px) {
+  div.content {
+    border-top: solid 4px #ff3a75f5;
+  }
   p.back-p {
     opacity: 0.3;
     position: fixed;

@@ -14,6 +14,7 @@ import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import CakeIcon from '@material-ui/icons/Cake';
 import One from './Avatar/One';
+import PhoneIcon from '@material-ui/icons/Phone';
 
 const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, handleChangePhone} ) => {
 
@@ -21,15 +22,14 @@ const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, han
     
     <div className="styleContainerSignup">
       <div className="masterContainer">
-      
         <One/>
         <div className="login">
-          <h1 className="sectionHeader">Welcome.</h1>
-          <p className="sectionDescription">Login or signup to continue.</p>
+          <div className="sectionText">
+            <h1 className="sectionHeader">Welcome.</h1>
+            <p className="sectionDescription">Signup or login to continue.</p>
+          </div>
             <div className='page-detail'>
-              <h3 className="alignleft highlighted">1. Your Details</h3>
-              <p className="aligncenter">2. Privacy</p>
-              <p className="alignright">3. Finish</p>
+              <p className="highlighted">1. Your Details</p> <p className="nextOne"> 2. Privacy </p> <p className="lastOne">3. Finish</p>  
             </div>
         <form noValidate className="form go-bottom">
                 <div className="name inputAvatar">
@@ -120,7 +120,7 @@ const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, han
                       minDate={new Date(1920, 1, 1)}
                       
                   />
-                  <label className="label">Password</label>
+                  <label className="label">Birthday</label>
 
                   {values.formErrorsMessages.birthdate.length > 0 && (
                   console.log(values.formErrorsMessages.birthdate),
@@ -128,6 +128,7 @@ const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, han
                   )}
                 </div>
                 <div className="phoneNumber inputAvatar">
+                  <PhoneIcon/>
                   <PhoneInput
                     flags={flags}
                     defaultCountry="DK"
@@ -140,6 +141,7 @@ const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, han
                     onChange={handleChangePhone}
                     value={values.phone_extension + values.phone_number}
                   />
+                  <label className="label">Phone Number</label>
                 </div>
           <small><i>Fields marked with * are required</i></small>
           <button 

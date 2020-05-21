@@ -1,24 +1,38 @@
 div.styleContainerSignup {
-    h3.highlighted {
+
+    p.highlighted {
         color: #ff3a75f5;
+        font-weight: bold;
+        display: inline-flex;
+        font-size: 20px;
+    }
+
+    div.sectionText {
+        display: flexbox;
+        h1 {
+            margin-bottom: -20px;
+        }
+    }
+
+    p.nextOne, p.lastOne {
+        display: inline-flex;
+        margin-left: 20px;
+        font-size: 16px;
     }
     div.masterContainer {
         display: inline-flex;
-        flex-direction: row;
+        flex-direction: row-reverse;
         height: 100%;
         padding: 25px;
         border-radius: 9px;
-        width: 90%;
+        width: 100%;
         justify-content: center;
         align-items: center;
+        margin-top: -40px;
     }
 
     div.react-datepicker {
         font-weight: normal;
-    }
-
-    div.birth_date {
-        margin-top: 30px;
     }
 
     div.birth_date input {
@@ -29,7 +43,7 @@ div.styleContainerSignup {
         display: flex;
         flex-direction: column;
         margin: 1% 0;
-        width: 100%;
+        width: 50%;
         margin-right: 35px;
     }
 
@@ -39,11 +53,10 @@ div.styleContainerSignup {
         flex-direction: column;
         margin-right: 120px;
         width: 50%;
-        align-items: left;
         
     }
     div.picture svg {
-        width: 600px;
+        width: 900px;
         height: 450px;
         transition: width 0.5s;
     }
@@ -91,11 +104,11 @@ div.styleContainerSignup {
     }
     div.login input {
         border: none;
-        padding-bottom: 3px;
         border-bottom: 2px solid rgba(128, 128, 128, 0.281);
         background: transparent;
         font-size: 16px;
         color: #ff3a75f5;
+        margin-bottom: 4px;
     }
 
 
@@ -105,8 +118,6 @@ div.styleContainerSignup {
     }
 
     p.sectionDescription {
-        margin-top: -50px;
-        margin-bottom: 25px;
         color: rgba(128, 128, 128, 0.739);
         font-size: 19px;
     }
@@ -127,8 +138,6 @@ div.styleContainerSignup {
             width: 420px;
         }
         p.sectionDescription {
-            margin-top: -35px;
-            margin-bottom: 25px;
             color: rgba(128, 128, 128, 0.739);
             font-size: 19px;
         }
@@ -163,35 +172,36 @@ div.styleContainerSignup {
     @media only screen and (max-width: 855px) { 
         div.picture svg{
             width: 130%;
+            display: none;
+        }
+        div.picture {
+            display: none;
+            content: '';
         }
     
     }
 
     @media only screen and (max-width: 700px) { 
+
         p.sectionDescription {
-            margin-top: 10px;
-            margin-bottom: 25px;
             color: rgba(128, 128, 128, 0.739);
             font-size: 19px;
         }
         div.page-detail {
             display: none;
         }
+
+        div.sectionText {
+            margin-top: 140px;
+        }
         div.masterContainer {
             display: flexbox;
             flex-direction: column-reverse;
-            height: 100vh;
-            margin: 0 auto;
-            width: 90%;
+            height: 100%;
+            width: 85%;
             margin-top: -180px;
-            overflow-y: scroll;
         }
 
-        div.picture svg {
-            width: 100%;
-            height: 300px; 
-        
-        }
 
         div.login {
             width: 90%;
@@ -199,23 +209,14 @@ div.styleContainerSignup {
 
         div.login input {
             width: 100%;
+            
         }
         div.login p {
             width: 100%;
         }
 
-        div.picture {
-            width: 100%;
-            justify-content: left;
-            align-items: left;  
-            overflow: overflow-x;
-            margin: 0 auto;
-        }
-
         h1.sectionHeader {
             width: 100%;
-            padding-top: 145px;
-            margin-bottom: -10px;
         }
     }
 
@@ -224,12 +225,11 @@ div.styleContainerSignup {
             font-size: 30px;
         }
         div.masterContainer {
-            width: 85%;
+            width: 95%;
         }
         div.picture svg {
             width: 280px;
             height: 300px;
-            overflow: hidden;
         }
 
         div.picture {
@@ -247,12 +247,17 @@ div.styleContainerSignup {
         div.picture {
             margin-right: -50px;
         }
+
     }
 
 
     // Form CSS
     div.birth_date {
         z-index: 2;
+    }
+
+    div.birth_date svg {
+        display: block;
     }
     form {
         width: 100%;
@@ -264,7 +269,7 @@ div.styleContainerSignup {
         input, textarea {
         width: 100%;
         border: 2px solid gray; 
-        background: none;
+        background: transparent;
         position: relative;
         top: 0;
         left: 0;
@@ -273,7 +278,7 @@ div.styleContainerSignup {
         outline: 0;
         &:valid {
             // Hides the label
-            background: white; 
+
         }
 
         &:not(:valid) {
@@ -291,7 +296,7 @@ div.styleContainerSignup {
             text-transform: uppercase;
         }
         &::placeholder {
-            display: none;
+            color: rgba(128, 128, 128, 0.411);
         }
         }
         label {
@@ -313,7 +318,6 @@ div.styleContainerSignup {
     
     form.go-bottom {
         input, textarea {
-        padding: 12px 12px 12px 12px; 
         }
         label {
         top: 0;

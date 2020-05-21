@@ -8,7 +8,7 @@ div.styleContainer {
         width: 90%;
         justify-content: center;
         align-items: center;
-        margin-top: -250px;
+        margin-top: 0px;
     }
 
     div.login {
@@ -39,20 +39,22 @@ div.styleContainer {
     }
 
     button.formbutton {
-        background-image: linear-gradient(to top, #e8edf1 0%, white 100%);
+        background: #ff3a75f5;
         padding: 20px 15px;
         border: 2px solid #ff3a75a4;
         border-radius: 5px;
         margin-top: 20px;
         width: 120px;
-        color: #ff3a75f5;
+        color: white;
         font-weight: bold;
         transition: background 2s;
         margin-right: 15px;
+        transition: background 1s;
     }
 
-    button.formbutton:nth-child(2) {
-        background-image: linear-gradient(to top, white 0%, #e8edf1 100%);
+    button.formbutton:nth-child(1) {
+        background: linear-gradient(to top, white 0%, #e8edf1 100%);
+        color: #ff3a75a4;
    
     }
 
@@ -148,8 +150,8 @@ div.styleContainer {
             flex-direction: column-reverse;
             height: 100%;
             margin: 0 auto;
-            width: 90%;
-            margin-top: -100px;
+            width: 85%;
+            margin-top: 0px;
         }
 
         div.picture svg {
@@ -173,18 +175,18 @@ div.styleContainer {
             width: 100%;
             justify-content: left;
             align-items: left;  
-            overflow: overflow-x;
             margin: 0 auto;
         }
 
         h1.sectionHeader {
-            width: 100%;
+            width: 110%;
         }
     }
 
-    @media only screen and (max-width: 400px) { 
+    @media only screen and (max-width: 420px) { 
         div.masterContainer {
             width: 75%;
+            height: 100%;
         }
         div.picture svg {
             width: 300px;
@@ -193,6 +195,16 @@ div.styleContainer {
 
         div.picture {
             margin-right: -40px;
+        }
+
+        h1.sectionHeader {
+            margin-top: 110px;
+            color: #ff3a75f5;
+            font-size: 40px;
+        }
+
+        p.sectionDescription {
+            margin-bottom: -10px;
         }
     }
 
@@ -206,6 +218,11 @@ div.styleContainer {
         div.picture {
             margin-right: -50px;
         }
+
+        h1.sectionHeader {
+            color: #ff3a75f5;
+            font-size: 30px;
+        }
     }
 
 
@@ -217,7 +234,6 @@ div.styleContainer {
         margin-top: 20px;
         > div {
         position: relative;
-        overflow: hidden;
         }
         input, textarea {
         width: 100%;
@@ -249,7 +265,7 @@ div.styleContainer {
             text-transform: uppercase;
         }
         &::placeholder {
-            display: none;
+            color: rgba(128, 128, 128, 0.411);
         }
         }
         label {
@@ -271,7 +287,7 @@ div.styleContainer {
         
         form.go-bottom {
             input, textarea {
-            padding: 12px 12px 12px 12px; 
+           
             }
             label {
             top: 0;

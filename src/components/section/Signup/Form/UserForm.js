@@ -6,7 +6,6 @@ import * as Constants from '../../../../constants';
 import isValidBirthdate from 'is-valid-birthdate';
 import { isValidPhoneNumber, formatPhoneNumberIntl} from 'react-phone-number-input'
 import { Redirect } from 'react-router-dom';
-import One from './Avatar/One';
 import Two from './Avatar/Two';
 import Three from './Avatar/Three'; 
 
@@ -16,7 +15,6 @@ export class UserForm extends Component {
     step: Constants.LOGIN_PAGE,
     birthdate: new Date(2000, 0, 1),
     user_name: null,
-    area: null,
     email: null,
     password: null,
     phone_number: "",
@@ -99,8 +97,8 @@ export class UserForm extends Component {
         formErrorsMessages.postal_code = Constants.POSTAL_CHECK.test(value)
         ? ""
         : "You have to provide your 4-digit postal code"
-      default:
         break;
+      default:
     }   
     this.setState({ formErrorsMessages, [name]: value });
   };
@@ -195,7 +193,6 @@ export class UserForm extends Component {
             prevStep = {prevStep}
             handlePrivacy = {handlePrivacy}
           />
-          <Two />
           </div>
         )     
       case Constants.SUCCESS_PAGE:
@@ -206,9 +203,8 @@ export class UserForm extends Component {
               ${JSON.stringify(this.state, 0, 2)}`) 
             }
             <Success
-              prevStep = {prevStep}
+              prevStep = {prevStep} displayName={this.state.user_name}
             /> 
-            <Three />
 
             {this.handleSignup()}
           </div>

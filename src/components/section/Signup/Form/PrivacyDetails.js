@@ -1,5 +1,6 @@
 import React from 'react';
-
+import '../../../../scss/modules/_authFormPrivacySuccess.scss';
+import Two from './Avatar/Two';
 
 const PrivacyDetails = ({handlePrivacy, comTrayProduct, comOtherProducts, nextStep, prevStep}) => {
  
@@ -7,23 +8,15 @@ const PrivacyDetails = ({handlePrivacy, comTrayProduct, comOtherProducts, nextSt
     <div className='wrapper'>
       <div className='form-wrapper'>
       <div className='page-detail'>
-        <p className="alignleft user">User Details</p>
-        <h3 className="aligncenter privacy">Privacy</h3>
-        <p className="alignright done">Done</p>
+      <div className="sectionText">
+        <h1 className="sectionHeader">Privacy.</h1>
+        <p className="sectionDescriptionPrivacy">We value your privacy.</p>
+      </div>
+            <div className='page-detail'>
+              <p className="nextOne">1. Your Details</p> <p className="highlighted"> 2. Privacy </p> <p className="lastOne">3. Finish</p>  
+            </div>
       </div>
       <div className='privacy-options'>
-        <div>
-          <input 
-            type="checkbox" 
-            value="comTrayProduct" 
-            checked={comTrayProduct} 
-            onChange={handlePrivacy('comTrayProduct')} 
-          />
-          <label 
-            id='label-txt' 
-            htmlFor="comTrayProduct">We won't give out your information
-          </label>
-        </div>
         <br/>
         <div>
           <input 
@@ -34,16 +27,19 @@ const PrivacyDetails = ({handlePrivacy, comTrayProduct, comOtherProducts, nextSt
           />            
           <label 
             id='label-txt' 
-            htmlFor="comOtherProducts">Receive communication by email for other products created by the Tray.io team
+            htmlFor="comOtherProducts">Receive communication by email for discounts or other produces related to App Navn
           </label>
         </div> 
         <br/> 
       </div>   
       <br/>
-      <button id='btn-next' onClick={nextStep}>Next</button>
-      <br/>
-      <button id='btn-back' onClick={prevStep}>Back</button>
+      <div className="buttonGroup">
+        <button className="stepBtn" id='btn-next' onClick={nextStep}>Create</button>
+        <br/>
+        <button className="stepBtn" id='btn-back' onClick={prevStep}>Back</button>
+      </div>
     </div>    
+    <Two />
   </div>            
 )};
 
