@@ -107,6 +107,7 @@ p.back-p svg {
     transform: scale(0.75);
   }
   div.content-nav {
+    z-index: 3;
     position: fixed;
     bottom: 0;
     width: 100vw;

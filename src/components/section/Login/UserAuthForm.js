@@ -23,9 +23,13 @@ const UserAuthForm = () => {
 
   function login() {
 
-      if (toggleLogged) {
+      if (errors !== false) {
         return <Redirect to="/"/>;
       }
+
+      else (
+        console.log("Tons of errors")
+      )
   };
 
   return (
@@ -37,7 +41,7 @@ const UserAuthForm = () => {
       <div className="login">
           <h1 className="sectionHeader">Hello There.</h1>
           <p className="sectionDescription">Login or signup to continue.</p>
-            <form onSubmit={handleSubmit} noValidate className="go-bottom">
+            <form onSubmit={handleSubmit} className="go-bottom">
               <div className="field">
                 <div className="control">
                   <div className="inputAvatar">

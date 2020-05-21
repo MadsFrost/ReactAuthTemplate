@@ -6,11 +6,13 @@ import * as Constants from '../../../../constants';
 import isValidBirthdate from 'is-valid-birthdate';
 import { isValidPhoneNumber, formatPhoneNumberIntl} from 'react-phone-number-input'
 import { Redirect } from 'react-router-dom';
+import One from './Avatar/One';
+import Two from './Avatar/Two';
+import Three from './Avatar/Three'; 
 
 export class UserForm extends Component {
 
   state = {
-    redirect: null,
     step: Constants.LOGIN_PAGE,
     birthdate: new Date(2000, 0, 1),
     user_name: null,
@@ -24,8 +26,10 @@ export class UserForm extends Component {
       email: "",
       password: "",
       birthdate: "",
-      phone_number: ""
+      phone_number: "",
+      postal_code: ""
     },
+    redirect: null,
   };
 
   // Proceed to the next step  
@@ -42,7 +46,8 @@ export class UserForm extends Component {
 
       } else {
           return(
-              alert("Couldn't continue. Please check your information again.")
+            // eslint-disable-next-line
+            this.state.formErrorsMessages.birthdate = "Not a correct date."
               );
       }
     }
@@ -58,8 +63,7 @@ export class UserForm extends Component {
 
     else {
       // eslint-disable-next-line
-      this.state.formErrorsMessages.birthdate = "Wrong birthday";
-      console.log("Not valid")
+      alert("Couldn't continue. Please check your information again.")
   }
     
   };
@@ -91,6 +95,10 @@ export class UserForm extends Component {
           ? "" 
           : "minimum 9 characters required, at least 1 digit, 1 uppercase and 1 lowercase"
         break;
+      case "post_code":
+        formErrorsMessages.postal_code = Constants.POSTAL_CHECK.test(value)
+        ? ""
+        : "You have to provide your 4-digit postal code"
       default:
         break;
     }   
@@ -166,7 +174,6 @@ export class UserForm extends Component {
     const values = { user_name, area, phone_number, phone_extension, birthdate, email, password, formErrorsMessages}
     const { handleChange, handlePrivacy, nextStep, prevStep} = this
     // eslint-disable-next-line default-case
-    console.log(this.state.phone_extension);
     switch(step) {
       case Constants.LOGIN_PAGE: 
         return (
@@ -178,16 +185,18 @@ export class UserForm extends Component {
               handleChangePhone = {this.handleChangePhone}
               values = {values}
             />
-            <button onClick={() => this.setState({ redirect: "/login" })}>Did you mean to login?</button> 
           </div>
         )
       case Constants.PRIVACY_PAGE:
         return (
+          <div>
           <PrivacyDetails 
             nextStep = {nextStep}
             prevStep = {prevStep}
             handlePrivacy = {handlePrivacy}
           />
+          <Two />
+          </div>
         )     
       case Constants.SUCCESS_PAGE:
         return (
@@ -198,7 +207,8 @@ export class UserForm extends Component {
             }
             <Success
               prevStep = {prevStep}
-            />
+            /> 
+            <Three />
 
             {this.handleSignup()}
           </div>

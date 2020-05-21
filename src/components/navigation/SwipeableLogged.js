@@ -180,11 +180,11 @@ export default function SwipeNavigation() {
                 <WhatshotIcon className={classes.exploreIconNav + className}/>
               </Button>
             </Link>
-            <Link to="/profile" className="profileAvatar">
-              <Button>
-                <PersonIcon className={classes.AvatarIconNav + classNameProfile}/>
-              </Button>
-            </Link>
+              <Link to="/profile" className="profileAvatar">
+                <Button>
+                  <PersonIcon className={classes.AvatarIconNav + classNameProfile}/>
+                </Button>
+              </Link>
           </div>
           
           <SwipeableDrawer
