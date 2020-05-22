@@ -25,7 +25,7 @@ const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, han
         <div className="login">
           <div className="sectionText">
             <h1 className="sectionHeader">Welcome.</h1>
-            <p className="sectionDescription">Signup or login to continue.</p>
+            <p className="sectionDescription">Information will not be publicy available. Signup or login to continue.</p>
           </div>
             <div className='page-detail'>
               <p className="highlighted">1. Your Details</p> <p className="nextOne"> 2. Privacy </p> <p className="lastOne">3. Finish</p>  
@@ -45,7 +45,7 @@ const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, han
                       onChange={handleChange}
                       defaultValue={values.user_name}
                     />
-                    <label className="label">Name</label>
+                    <label className="label">Screen Name</label>
                     {values.formErrorsMessages.user_name.length > 0 && (
                       <span className="errorMessage">{values.formErrorsMessages.user_name}</span>
                     )}
@@ -143,6 +143,7 @@ const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, han
                   <label className="label">Phone Number</label>
                 </div>
           <small><i>Fields marked with * are required</i></small>
+          <small><i>All information provided will be private.</i></small>
           <button 
             type="submit" 
             className="formbutton"

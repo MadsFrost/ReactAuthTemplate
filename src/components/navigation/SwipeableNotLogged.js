@@ -87,6 +87,14 @@ export default function SwipeNavigation() {
       <Divider />
 
       <List className="drawer drawerUnder">
+          <Link to="/">
+            <ListItem>
+              <ListItemIcon>
+                <WhatshotIcon />
+              </ListItemIcon>
+              <ListItemText primary="Explore"/>
+            </ListItem>
+          </Link>
 
           <Link to="/login">
             <ListItem>

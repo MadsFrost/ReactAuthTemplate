@@ -93,6 +93,14 @@ export default function SwipeNavigation() {
 
       <List className="drawer drawerUnder">
 
+          <Link to="/">
+            <ListItem>
+              <ListItemIcon>
+                <WhatshotIcon />
+              </ListItemIcon>
+              <ListItemText primary="Explore"/>
+            </ListItem>
+          </Link>
           <Link to="/profile">
           <ListItem>
             <ListItemIcon>
