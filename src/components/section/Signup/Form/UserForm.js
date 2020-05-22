@@ -6,8 +6,8 @@ import * as Constants from '../../../../constants';
 import isValidBirthdate from 'is-valid-birthdate';
 import { isValidPhoneNumber, formatPhoneNumberIntl} from 'react-phone-number-input'
 import { Redirect } from 'react-router-dom';
-import Two from './Avatar/Two';
-import Three from './Avatar/Three'; 
+
+
 
 export class UserForm extends Component {
 

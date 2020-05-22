@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ExploreCards = () => {
+const FilterOption = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const ExploreCards = () => {
     )
 }
 
-export default ExploreCards;
+export default FilterOption

@@ -7,7 +7,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import '../../../../scss/modules/_authFormSignup.scss';
 import { isValidPhoneNumber } from 'react-phone-number-input';
 import { Link } from "react-router-dom";
-import {ReactComponent as LoginAvatar} from '../../../../assets/modules/register/2.svg';
 import PermIdentityIcon from '@material-ui/icons/PermIdentity';
 import LocationCityIcon from '@material-ui/icons/LocationCity';
 import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';

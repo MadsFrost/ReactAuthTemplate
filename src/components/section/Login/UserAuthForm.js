@@ -1,7 +1,7 @@
 import React from 'react';
 import useForm from "./useForm";
 import validate from './LoginFormValidationRules';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Redirect, Link } from "react-router-dom";
 import { loggedon } from "../../../store/actions/index";
 import "../../../scss/modules/_authFormLogin.scss";
@@ -18,7 +18,6 @@ const UserAuthForm = () => {
     handleSubmit,
   } = useForm(login, validate);
 
-  const toggleLogged = useSelector(state => state.isLogged);
   const dispatch = useDispatch();
 
   function login() {

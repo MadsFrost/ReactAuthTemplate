@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaRegThumbsUp } from 'react-icons/fa';
 import Three from './Avatar/Three';
 import {Link} from 'react-router-dom';
 
