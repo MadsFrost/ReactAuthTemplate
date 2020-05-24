@@ -10,3 +10,34 @@
                     | $$  */                
                     
     
+// Explore Card Item - Stylesheet
+
+div.personCard {
+margin-top: 20px;
+width: 25vw;
+display: flexbox;
+background-color: rgb(221, 7, 7);
+
+    img.personPic {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+    div.personTop {
+        background-color: red;
+    }
+
+    div.personMid {
+
+    }
+
+    div.personFooter {
+
+    }
+}
+
+@media only screen and (max-width: 700px) { 
+    div.personCard {
+        width: 50vw;
+    }
+}
