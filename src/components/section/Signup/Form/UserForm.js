@@ -19,6 +19,7 @@ export class UserForm extends Component {
     password: null,
     phone_number: "",
     phone_extension: "+45", 
+    area: "Copenhagen",
     formErrorsMessages: {
       user_name: "",
       email: "",
@@ -93,11 +94,12 @@ export class UserForm extends Component {
           ? "" 
           : "minimum 9 characters required, at least 1 digit, 1 uppercase and 1 lowercase"
         break;
+        /*
       case "post_code":
         formErrorsMessages.postal_code = Constants.POSTAL_CHECK.test(value)
         ? ""
         : "You have to provide your 4-digit postal code"
-        break;
+        break;*/
       default:
     }   
     this.setState({ formErrorsMessages, [name]: value });
@@ -152,7 +154,16 @@ export class UserForm extends Component {
 
   };
 
+  // Handle Area Change to state
+  handleChangeArea = e => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    let selectedTown = e.target.value;
 
+    this.setState({
+      area: selectedTown
+    })
+  }
 
   // Handle user privacy details
   handlePrivacy = name => e => {
@@ -170,7 +181,7 @@ export class UserForm extends Component {
     }
     const { step, user_name, area, phone_number, phone_extension, birthdate, email, password, formErrorsMessages } = this.state
     const values = { user_name, area, phone_number, phone_extension, birthdate, email, password, formErrorsMessages}
-    const { handleChange, handlePrivacy, nextStep, prevStep} = this
+    const { handleChangeArea, handleChange, handlePrivacy, nextStep, prevStep} = this
     // eslint-disable-next-line default-case
     switch(step) {
       case Constants.LOGIN_PAGE: 
@@ -181,6 +192,7 @@ export class UserForm extends Component {
               handleChange = {handleChange}
               handleChangeDate = {this.handleChangeDate}
               handleChangePhone = {this.handleChangePhone}
+              handleChangeArea = {this.handleChangeArea}
               values = {values}
             />
           </div>

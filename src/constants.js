@@ -5,7 +5,6 @@ export const SUCCESS_PAGE = 2
 // Validate helper to check if name, email and password are valid 
 export const FORM_VALID = ({ formErrorsMessages, birthDate, area, phoneNumber, redirect,  ...rest}) => {
   let valid = true;
-  
   // validate form errors is empty
   
   Object.values(formErrorsMessages).forEach(val => {

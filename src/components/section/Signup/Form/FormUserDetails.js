@@ -15,7 +15,7 @@ import CakeIcon from '@material-ui/icons/Cake';
 import One from './Avatar/One';
 import PhoneIcon from '@material-ui/icons/Phone';
 
-const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, handleChangePhone} ) => {
+const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, handleChangePhone, handleChangeArea} ) => {
 
   return (
     
@@ -52,16 +52,21 @@ const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, han
                 </div>
                 <div className="areaCode inputAvatar">
                   <LocationCityIcon/>
-                  <input
-                    id="input-form-areacode"
-                    className={values.formErrorsMessages.password.length > 0 ? "error" : "correct"}
+                  <select
+                    id="areaSlc"
                     placeholder="Postcode *"
-                    autoComplete="current-areacode"
-                    type="number"
-                    name="post_code"
-                    onChange={handleChange}
-                    defaultValue={values.area}
-                  />
+                    type="text"
+                    onChange={handleChangeArea}
+                  >
+                  <option value="Copenhagen">Copenhagen</option>
+                  <option value="Jylland">Jylland</option>
+                  <option value="Sjælland">Sjælland</option>
+                  <option value="Fyn">Fyn</option>
+                  <option value="Lolland">Lolland</option>
+                  <option value="Falster">Falster</option>
+                  <option value="Bornholm">Bornholm</option>
+                  
+                  </select>
                   <label className="label">Postcode</label>
                   {values.formErrorsMessages.postal_code.length > 0 && (
                     <span className="errorMessage">{values.formErrorsMessages.postal_code}</span>

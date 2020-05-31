@@ -1,5 +1,6 @@
 div.styleContainerSignup {
-
+width: 90%;
+padding-left: 40px;
     p.highlighted {
         color: #ff3a75f5;
         font-weight: bold;
@@ -8,7 +9,6 @@ div.styleContainerSignup {
     }
 
     div.sectionText {
-        display: flexbox;
         h1 {
             margin-bottom: -20px;
         }
@@ -23,12 +23,11 @@ div.styleContainerSignup {
         display: inline-flex;
         flex-direction: row-reverse;
         height: 100%;
-        padding: 25px;
         border-radius: 9px;
         width: 100%;
         justify-content: center;
         align-items: center;
-        margin-top: -40px;
+        margin-top: 0px;
     }
 
     div.react-datepicker {
@@ -102,7 +101,7 @@ div.styleContainerSignup {
     div.field {
         margin-top: 15px;
     }
-    div.login input {
+    div.login input, select {
         border: none;
         border-bottom: 2px solid rgba(128, 128, 128, 0.281);
         background: transparent;
@@ -122,7 +121,16 @@ div.styleContainerSignup {
         font-size: 19px;
     }
 
+    select {
+        margin-top: 35px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        overflow: scroll !important;
+    }
 
+    select:hover {
+        cursor: pointer;
+    }
     @media only screen and (max-width: 1500px) { 
 
         h1.sectionHeader {
@@ -203,7 +211,7 @@ div.styleContainerSignup {
             flex-direction: column-reverse;
             height: 100%;
             width: 85%;
-            margin-top: -180px;
+            margin-top: -140px;
         }
 
 
@@ -230,6 +238,7 @@ div.styleContainerSignup {
         }
         div.masterContainer {
             width: 95%;
+            height: 1000px;
         }
         div.picture svg {
             width: 280px;
@@ -267,7 +276,7 @@ div.styleContainerSignup {
         width: 100%;
         float: left;
         margin-top: 20px;
-        > div:not(.react-datepicker) {
+        > div:not(.react-datepicker, #areaSlc) {
         position: relative;
         }
         input, textarea {
