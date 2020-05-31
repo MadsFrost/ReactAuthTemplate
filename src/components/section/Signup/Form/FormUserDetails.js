@@ -20,6 +20,20 @@ const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, han
   return (
     
     <div className="styleContainerSignup">
+      <select
+                    id="areaSlc"
+                    placeholder="Postcode *"
+                    onChange={handleChangeArea}
+                  >
+                  <option value="Copenhagen">Copenhagen</option>
+                  <option value="Jylland">Jylland</option>
+                  <option value="Sjælland">Sjælland</option>
+                  <option value="Fyn">Fyn</option>
+                  <option value="Lolland">Lolland</option>
+                  <option value="Falster">Falster</option>
+                  <option value="Bornholm">Bornholm</option>
+                  
+                  </select>
       <div className="masterContainer">
         <One/>
         <div className="login">
@@ -55,7 +69,6 @@ const FormUserDetails = ( {values, handleChange, nextStep, handleChangeDate, han
                   <select
                     id="areaSlc"
                     placeholder="Postcode *"
-                    type="text"
                     onChange={handleChangeArea}
                   >
                   <option value="Copenhagen">Copenhagen</option>

@@ -49,6 +49,7 @@ body {
   justify-content: center;
   overflow-y: hidden;
   overflow-x: hidden;
+  width: 100%;
 }
 .main { 
   font-family: map-get($map: $selected-UI, $key: "font-family");
@@ -98,7 +99,7 @@ p.back-p svg {
   margin-right: 5px;
   font-size: 60px;
 }
-
+@media only screen and (max-width: 1000px) { div.content{overflow-y: scroll;}}
 @media only screen and (max-width: 600px) {
   body {
     overflow-y: hidden;

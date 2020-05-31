@@ -27,7 +27,7 @@ padding-left: 40px;
         width: 100%;
         justify-content: center;
         align-items: center;
-        margin-top: 0px;
+        margin-top: -50px;
     }
 
     div.react-datepicker {
@@ -126,6 +126,7 @@ padding-left: 40px;
         margin-bottom: 20px;
         padding-bottom: 10px;
         overflow: scroll !important;
+        z-index: 3;
     }
 
     select:hover {
