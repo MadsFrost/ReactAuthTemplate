@@ -34,7 +34,7 @@ $selected-UI: $light-ui;
 
 body::before {
   content: '';
-  background-color: white;
+  background-color: rgb(245, 212, 212);
   background-image: linear-gradient(to bottom, #e8edf1 0%, white 100%);
   filter: blur(13px);
   position: absolute;
