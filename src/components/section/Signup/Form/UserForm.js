@@ -217,6 +217,7 @@ export class UserForm extends Component {
             <Success
               prevStep = {prevStep} displayName={this.state.user_name}
             /> 
+            {console.log("this is where the api is getting called.")}
 
             {this.handleSignup()}
           </div>
