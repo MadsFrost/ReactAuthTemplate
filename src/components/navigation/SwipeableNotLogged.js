@@ -110,7 +110,7 @@ export default function SwipeNavigation() {
               <ListItemIcon>
                 <PermIdentityIcon />
               </ListItemIcon>
-              <ListItemText primary="Signup"/>
+              <ListItemText primary="Signup / Login"/>
             </ListItem>
           </Link>
           <div className="listFooter">

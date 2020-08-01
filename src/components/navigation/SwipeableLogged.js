@@ -18,7 +18,7 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import LockIcon from '@material-ui/icons/Lock';
 import PersonIcon from '@material-ui/icons/Person';
 import BackButton from '../section/Buttons/BackButton';
-
+import { ReactComponent as Logo } from './../../assets/logo/love-and-romance.svg';
 import {
   Link, useLocation
 } from "react-router-dom";
@@ -53,6 +53,10 @@ const useStyles = makeStyles({
   AvatarIconNav: {
     color: 'grey',
     fontSize: '50px'
+  },
+  WhatsHotIconNav: {
+    color: '#ff3a75f5',
+    fontSize: '35px'
   }
 });
 
@@ -96,9 +100,9 @@ export default function SwipeNavigation() {
           <Link to="/">
             <ListItem>
               <ListItemIcon>
-                <WhatshotIcon />
+                <WhatshotIcon className={classes.WhatsHotIconNav}/>
               </ListItemIcon>
-              <ListItemText primary="Explore"/>
+              <ListItemText  primary="Explore"/>
             </ListItem>
           </Link>
           <Link to="/profile">
