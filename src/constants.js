@@ -1,4 +1,4 @@
-npm stexport const LOGIN_PAGE = 0
+export const LOGIN_PAGE = 0
 export const PRIVACY_PAGE = 1
 export const SUCCESS_PAGE = 2
 
