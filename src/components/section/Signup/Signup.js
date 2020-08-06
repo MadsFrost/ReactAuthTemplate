@@ -4,9 +4,7 @@ const Signup = () => {
 
 
     return (
-        <div>
             <UserForm/>
-        </div>
     )
 }
 

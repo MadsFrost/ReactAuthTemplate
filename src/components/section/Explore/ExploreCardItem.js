@@ -9,7 +9,7 @@ const ExploreCardItem = () => {
                 <p>Working: </p>
             </div>
             <div className="personMid">
-                <img className="personPic" src={picture}/>
+                Picture
             </div>
             <div className="personFooter">
                 Footer
