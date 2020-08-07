@@ -108,7 +108,7 @@ p.back-p svg {
     border-top: solid 4px #ff3a75f5;
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 100%;
+    height: calc(100% - 70px);
     
   }
   p.back-p {

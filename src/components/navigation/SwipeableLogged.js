@@ -18,7 +18,6 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import LockIcon from '@material-ui/icons/Lock';
 import PersonIcon from '@material-ui/icons/Person';
 import BackButton from '../section/Buttons/BackButton';
-import { ReactComponent as Logo } from './../../assets/logo/love-and-romance.svg';
 import {
   Link, useLocation
 } from "react-router-dom";
@@ -110,7 +109,7 @@ export default function SwipeNavigation() {
             <ListItemIcon>
               <PersonIcon />
             </ListItemIcon>
-            <ListItemText primary="Profile"/>
+            <ListItemText primary="Profile" />
           </ListItem>
           </Link>
 
@@ -119,7 +118,7 @@ export default function SwipeNavigation() {
             <ListItemIcon>
               <ForumIcon />
             </ListItemIcon>
-            <ListItemText primary="Messages"/>
+            <ListItemText primary="Messages" />
           </ListItem>
           </Link>
 

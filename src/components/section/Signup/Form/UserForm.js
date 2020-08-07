@@ -157,7 +157,6 @@ export class UserForm extends Component {
   // Handle Area Change to state
   handleChangeArea = e => {
     e.preventDefault();
-    const { name, value } = e.target;
     let selectedTown = e.target.value;
 
     this.setState({

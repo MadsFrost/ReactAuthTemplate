@@ -1,6 +1,5 @@
 import React from 'react'
 import './../../../scss/base/explore/_exploreCardItem.scss';
-import picture from './../../../assets/moose.jpg';
 const ExploreCardItem = () => {
     return (
         <div className="personCard"> 
