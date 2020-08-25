@@ -13,10 +13,15 @@
 // Explore Card Item - Stylesheet
 
 div.personCard {
-margin-top: 20px;
-width: 25vw;
-display: flexbox;
-background-color: rgb(255, 23, 100);
+padding: 10px 0px 25px 0px;
+background-color: rgb(245, 245, 245);
+display: inline-block;
+margin: 10px 10px;
+width: 25%;
+
+
+
+
 
     img.personPic {
         width: 100%;
@@ -24,7 +29,7 @@ background-color: rgb(255, 23, 100);
         height: auto;
     }
     div.personTop {
-        background-color: red;
+      
     }
 
     div.personMid {
@@ -38,6 +43,6 @@ background-color: rgb(255, 23, 100);
 
 @media only screen and (max-width: 700px) { 
     div.personCard {
-        width: 50vw;
+        width: 33%;
     }
 }
