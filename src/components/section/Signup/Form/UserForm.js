@@ -6,7 +6,7 @@ import * as Constants from '../../../../constants';
 import isValidBirthdate from 'is-valid-birthdate';
 import { isValidPhoneNumber, formatPhoneNumberIntl} from 'react-phone-number-input'
 import { Redirect } from 'react-router-dom';
-
+import swal from 'sweetalert';
 
 
 export class UserForm extends Component {
@@ -62,7 +62,7 @@ export class UserForm extends Component {
 
     else {
       // eslint-disable-next-line
-      alert("Couldn't continue. Please check your information again.")
+      swal("Couldn't continue. Please check all fields for errors.")
   }
     
   };

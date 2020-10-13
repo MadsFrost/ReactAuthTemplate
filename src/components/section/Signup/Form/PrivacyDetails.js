@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../../../scss/modules/_authFormPrivacySuccess.scss';
-import Two from './Avatar/Two';
 
 const PrivacyDetails = ({handlePrivacy, comTrayProduct, comOtherProducts, nextStep, prevStep}) => {
  
@@ -27,7 +26,7 @@ const PrivacyDetails = ({handlePrivacy, comTrayProduct, comOtherProducts, nextSt
           />            
           <label 
             id='label-txt' 
-            htmlFor="comOtherProducts">Receive communication by email for discounts or other produces related to App Navn
+            htmlFor="comOtherProducts">I accept the *terms* and *agreements* given by using this product.
           </label>
         </div> 
         <br/> 
@@ -39,7 +38,6 @@ const PrivacyDetails = ({handlePrivacy, comTrayProduct, comOtherProducts, nextSt
         <button className="stepBtn" id='btn-back' onClick={prevStep}>Back</button>
       </div>
     </div>    
-    <Two />
   </div>            
 )};
 

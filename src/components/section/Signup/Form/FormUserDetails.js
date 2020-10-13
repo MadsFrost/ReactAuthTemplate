@@ -12,7 +12,6 @@ import LocationCityIcon from '@material-ui/icons/LocationCity';
 import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import CakeIcon from '@material-ui/icons/Cake';
-import One from './Avatar/One';
 import PhoneIcon from '@material-ui/icons/Phone';
 
 const FormUserDetails = ( {values, handleChange, handleChangeArea, nextStep, handleChangeDate, handleChangePhone, area} ) => {
@@ -23,7 +22,6 @@ const FormUserDetails = ( {values, handleChange, handleChangeArea, nextStep, han
     
     <div className="styleContainerSignup">
       <div className="masterContainer">
-        <One/>
         <div className="login">
           <div className="sectionText">
             <h1 className="sectionHeader">Welcome.</h1>

@@ -1,5 +1,4 @@
 import React from 'react';
-import Three from './Avatar/Three';
 import {Link} from 'react-router-dom';
 
 const Success = (props) => {
@@ -19,7 +18,6 @@ const Success = (props) => {
         <h3 className='success-msg'>Feel free to login in with your new account. </h3>
         <Link to="/login"><button type="submit" className="logdeginn">Login</button></Link>
       </div>
-      <Three />
     </div> 
   )
 };

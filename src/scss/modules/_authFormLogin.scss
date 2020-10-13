@@ -363,5 +363,9 @@ div.styleContainer {
             padding-top: 5px;
             }
         }
-
+        @media only screen and (max-width: 370px) { 
+            div.masterContainer {
+                margin-top: 120px;
+            } 
+        }
 }

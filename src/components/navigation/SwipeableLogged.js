@@ -183,19 +183,19 @@ export default function SwipeNavigation() {
       {['left'].map((anchor) => (
         <React.Fragment key={anchor}>
           <div className="navbarMenu">
-            <Button onClick={toggleDrawer(anchor, true)}>
-              {state[anchor] ? <MenuOpenIcon className={classes.menuIcon} fontSize="large"/> : <MenuIcon className={classes.menuIcon} fontSize="large"/>}
-            </Button>
+            <Link to="/profile" className="profileAvatar">
+                <Button>
+                  <PersonIcon className={classes.AvatarIconNav + classNameProfile}/>
+                </Button>
+            </Link>
             <Link to="/">
               <Button>
                 <WhatshotIcon className={classes.exploreIconNav + className}/>
               </Button>
             </Link>
-              <Link to="/profile" className="profileAvatar">
-                <Button>
-                  <PersonIcon className={classes.AvatarIconNav + classNameProfile}/>
-                </Button>
-              </Link>
+              <Button onClick={toggleDrawer(anchor, true)}>
+              {state[anchor] ? <MenuOpenIcon className={classes.menuIcon} fontSize="large"/> : <MenuIcon className={classes.menuIcon} fontSize="large"/>}
+              </Button>
           </div>
           
           <SwipeableDrawer

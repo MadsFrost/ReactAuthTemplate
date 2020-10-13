@@ -105,7 +105,7 @@ export default function SwipeNavigation() {
             </ListItem>
           </Link>
 
-          <Link to="/signup">
+          <Link to="/login">
             <ListItem>
               <ListItemIcon>
                 <PermIdentityIcon />
@@ -145,19 +145,19 @@ export default function SwipeNavigation() {
       {['left'].map((anchor) => (
         <React.Fragment key={anchor}>
           <div className="navbarMenu">
-            <Button onClick={toggleDrawer(anchor, true)}>
-              {state[anchor] ? <MenuOpenIcon className={classes.menuIcon} fontSize="large"/> : <MenuIcon className={classes.menuIcon} fontSize="large"/>}
-            </Button>
-            <Link to="/">
-              <Button>
-                <WhatshotIcon className={classes.exploreIconNav + className}/>
-              </Button>
-            </Link>
             <Link to="/signup" className="profileAvatar">
               <Button>
                 <PersonAddIcon  className={classes.signUpIconNav + classNameProfile}/>
               </Button>
             </Link>
+            <Link to="/">
+              <Button>
+                <WhatshotIcon className={classes.exploreIconNav + className}/>
+              </Button>
+            </Link>
+            <Button onClick={toggleDrawer(anchor, true)}>
+              {state[anchor] ? <MenuOpenIcon className={classes.menuIcon} fontSize="large"/> : <MenuIcon className={classes.menuIcon} fontSize="large"/>}
+            </Button>
           </div>
           <SwipeableDrawer
             disableBackdropTransition={!iOS} 
