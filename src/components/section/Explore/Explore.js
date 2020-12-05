@@ -7,8 +7,7 @@ export default function Explore() {
 
   return (
     <div className="exploreContent">
-        <ExploreFilter />
-        <ExploreResult />
+        
     </div>
   );
 }
