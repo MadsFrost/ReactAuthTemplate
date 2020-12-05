@@ -1,3 +1,4 @@
+![ReactAuthTemplate](/WebApp.png)
 
 # React Auth Template
 ## Design
